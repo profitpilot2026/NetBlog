@@ -23,20 +23,20 @@
 .page-hero p{font-family:'Lora',serif;font-size:17px;color:rgba(255,255,255,0.5);font-style:italic;line-height:1.7;max-width:520px}
 
 .step-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:36px 0}
-.step-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px}
+.step-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px}
 .step-num{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
-.step-title{font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.step-title{font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px}
 .step-desc{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);line-height:1.6}
 
-.score-table{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:32px 0}
+.score-table{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:32px 0}
 .score-row{display:grid;grid-template-columns:1fr 120px;align-items:center;padding:16px 22px;border-bottom:1px solid var(--border)}
 .score-row:last-child{border-bottom:none}
-.score-row:nth-child(even){background:#f9fafb}
+.score-row:nth-child(even){background:var(--surface2)}
 .score-dim{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:var(--ink)}
 .score-weight{font-family:'Space Mono',monospace;font-size:11px;color:var(--accent)}
 
 .principle-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;margin:24px 0}
-.principle-list li{background:#fff;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 18px;font-family:'Inter',sans-serif;font-size:14px;color:var(--body-text);line-height:1.6}
+.principle-list li{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 18px;font-family:'Inter',sans-serif;font-size:14px;color:var(--body-text);line-height:1.6}
 .principle-list li strong{color:var(--ink);display:block;margin-bottom:4px}
 
 @media(max-width:640px){.step-grid{grid-template-columns:1fr}.page-hero{padding:48px 20px 40px}}
@@ -48,7 +48,7 @@
   <a href="index.html" class="logo">PROFIT<span>PILOT</span></a>
   <div class="nav-right">
     <a href="articles.html" class="nav-link">AI Tools</a>
-    <a href="articles.html" class="nav-link">Comparisons</a>
+    <a href="comparisons.html" class="nav-link">Comparisons</a>
     <a href="blog.html" class="nav-link">Guides</a>
     <a href="index.html#newsletter" class="nav-link">Newsletter</a>
     <a href="about.html" class="nav-link">About</a>

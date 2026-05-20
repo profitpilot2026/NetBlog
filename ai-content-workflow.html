@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Build an AI Content Workflow From Scratch | Profit Pilot</title>
+<meta name="description" content="The exact AI-assisted content system we use to produce 10x more content without burning out — tool stack, prompts, and process included.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://theprofitpilotai.netlify.app/ai-content-workflow.html">
+<meta property="og:title" content="How to Build an AI Content Workflow From Scratch">
+<meta property="og:image" content="https://theprofitpilotai.netlify.app/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.workflow-step{
+  display:grid;grid-template-columns:48px 1fr;gap:20px;
+  margin:32px 0;align-items:start;
+}
+.step-circle{
+  width:48px;height:48px;border-radius:50%;
+  background:var(--accent-light);border:1px solid rgba(168,143,255,0.3);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Mono',monospace;font-size:14px;font-weight:700;
+  color:var(--accent);flex-shrink:0;margin-top:2px;
+}
+.step-content{}
+.step-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;font-weight:800;color:var(--text);margin-bottom:8px;letter-spacing:-0.2px}
+.step-desc{font-family:'Lora',serif;font-size:16px;color:var(--body-text);line-height:1.8}
+.step-tool-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--surface2);border:1px solid var(--border);
+  font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);
+  padding:4px 10px;border-radius:4px;margin-top:10px;text-transform:uppercase;letter-spacing:0.5px;
+}
+.workflow-hero{
+  width:100%;height:260px;
+  background:linear-gradient(135deg,#0E1A14 0%,#0A0A0F 50%,#0E0A1A 100%);
+  border-radius:16px;display:flex;align-items:center;justify-content:center;
+  margin-bottom:48px;position:relative;overflow:hidden;
+}
+.workflow-hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 60% 40%,rgba(0,217,200,0.12) 0%,transparent 55%);}
+.wf-inner{position:relative;z-index:1;text-align:center;padding:0 24px}
+.wf-label{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent2);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px}
+.wf-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(22px,3.5vw,40px);font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1.1}
+.wf-steps-row{
+  display:flex;gap:0;margin-top:18px;justify-content:center;flex-wrap:wrap;
+}
+.wf-step-badge{
+  font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.4);
+  padding:4px 12px;border-right:1px solid rgba(255,255,255,0.1);
+  text-transform:uppercase;letter-spacing:1px;
+}
+.wf-step-badge:last-child{border-right:none}
+.prompt-box{
+  background:var(--surface2);border:1px solid var(--border);
+  border-left:3px solid var(--accent2);
+  border-radius:0 10px 10px 0;
+  padding:16px 20px;margin:16px 0;
+  font-family:'Space Mono',monospace;font-size:12px;
+  color:var(--body-text);line-height:1.7;
+}
+.prompt-label{font-size:9px;color:var(--accent2);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">PROFIT<span>PILOT</span> <span class="logo-star">✦</span></a>
+  <div class="nav-right">
+    <a href="articles.html" class="nav-link">AI Tools</a>
+    <a href="comparisons.html" class="nav-link">Comparisons</a>
+    <a href="blog.html" class="nav-link">Guides</a>
+    <a href="index.html#newsletter" class="nav-link">Newsletter</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="quiz.html" class="nav-pill">Find My AI Tool →</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="toggle-icon-dark">☽</span>
+      <span class="toggle-icon-light">◑</span>
+    </button>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="hero-inner">
+    <div class="hero-tag"><span class="star-g" style="font-size:10px">✦</span> Guide · Content Workflows</div>
+    <h1 class="article-title">How to Build an AI Content<br><em>Workflow From Scratch</em></h1>
+    <p class="hero-sub">The exact system we use to produce high-quality content consistently — without burning out or publishing AI slop. Tool stack and prompts included.</p>
+    <div class="hero-meta">
+      <span class="meta-item">By Profit Pilot</span>
+      <span class="meta-item">May 2025</span>
+      <span class="meta-item">9 min read</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="workflow-hero">
+    <div class="wf-inner">
+      <div class="wf-label">// Content Workflow System</div>
+      <div class="wf-title">Idea → Research → Draft → Edit → Publish</div>
+      <div class="wf-steps-row">
+        <div class="wf-step-badge">Perplexity</div>
+        <div class="wf-step-badge">Claude</div>
+        <div class="wf-step-badge">Grammarly</div>
+        <div class="wf-step-badge">Notion</div>
+        <div class="wf-step-badge">Buffer</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="lead">Most AI content workflows fail for one of two reasons: they either produce content that sounds like AI wrote it (because no human judgment was applied), or they become so complicated that they take longer than just writing the thing yourself.</p>
+
+  <p>What follows is the system we actually use. It's built around a clear principle: AI handles the parts that don't require your expertise, and you handle the parts that do. The result is content that's faster to produce and still sounds like it came from a person who knows what they're talking about.</p>
+
+  <hr>
+
+  <h2>The 5-stage workflow</h2>
+
+  <div class="workflow-step">
+    <div class="step-circle">01</div>
+    <div class="step-content">
+      <div class="step-title">Idea validation and angle finding</div>
+      <div class="step-desc">Before writing anything, use Perplexity or ChatGPT (with web browsing) to understand what already exists on the topic. You're not looking for content to copy — you're looking for gaps. What angle is missing? What question isn't being answered well?</div>
+      <div class="step-tool-tag"><span class="star-g" style="font-size:8px">✦</span> Tool: Perplexity AI</div>
+
+      <div class="prompt-box">
+        <div class="prompt-label">// Starter prompt</div>
+        Search for the top 5 articles about [topic]. Summarise the main angles covered and identify what's missing — what questions are left unanswered or what perspectives aren't represented?
+      </div>
+    </div>
+  </div>
+
+  <div class="workflow-step">
+    <div class="step-circle">02</div>
+    <div class="step-content">
+      <div class="step-title">Research and fact-gathering</div>
+      <div class="step-desc">Once you have your angle, use Claude or ChatGPT to pull together the factual scaffolding — statistics, examples, case studies, and key points. The critical thing here is to verify anything specific before it goes in the final piece. AI hallucinates. Your job is to catch it.</div>
+      <div class="step-tool-tag"><span class="star-y" style="font-size:8px">✦</span> Tool: Claude Pro</div>
+
+      <div class="prompt-box">
+        <div class="prompt-label">// Research prompt</div>
+        I'm writing an article about [topic + your specific angle]. Give me: 5 key facts or statistics (with context for where to verify them), 3 concrete examples or case studies, and the most common misconceptions about this topic.
+      </div>
+    </div>
+  </div>
+
+  <div class="workflow-step">
+    <div class="step-circle">03</div>
+    <div class="step-content">
+      <div class="step-title">Outline and structure</div>
+      <div class="step-desc">Don't skip the outline step. An AI-generated outline gives you a structure to react to — you'll move sections, cut some, and add your own. This is faster than building from a blank page and produces better final structure than letting the AI write linearly.</div>
+      <div class="step-tool-tag"><span class="star-y" style="font-size:8px">✦</span> Tool: Claude Pro</div>
+
+      <div class="prompt-box">
+        <div class="prompt-label">// Outline prompt</div>
+        Create a detailed outline for a [word count] article titled "[your title]" aimed at [audience]. The article should take the angle that [your angle]. Include H2s, H3s where needed, and a brief note on what each section covers.
+      </div>
+    </div>
+  </div>
+
+  <div class="workflow-step">
+    <div class="step-circle">04</div>
+    <div class="step-content">
+      <div class="step-title">Section-by-section drafting</div>
+      <div class="step-desc">This is where most people go wrong. They ask the AI to write the whole article at once, then complain the output is generic. Instead, write section by section — paste the outline context, write one section at a time, and inject your own opinions and examples as you go. The sections you write yourself are the ones that make the piece worth reading.</div>
+      <div class="step-tool-tag"><span class="star-y" style="font-size:8px">✦</span> Tool: Claude Pro</div>
+    </div>
+  </div>
+
+  <div class="workflow-step">
+    <div class="step-circle">05</div>
+    <div class="step-content">
+      <div class="step-title">Edit for voice, then polish</div>
+      <div class="step-desc">The final step is two passes: first, read through and rewrite any sentence that sounds like an AI wrote it (you'll know the ones). Second, run Grammarly or Hemingway for copy-editing. Don't skip the first pass — no grammar checker will fix generic writing.</div>
+      <div class="step-tool-tag"><span class="star-g" style="font-size:8px">✦</span> Tool: Grammarly / Hemingway</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>The tool stack</h2>
+
+  <table>
+    <thead><tr><th>Stage</th><th>Tool</th><th>Why this one</th><th>Cost</th></tr></thead>
+    <tbody>
+      <tr><td>Idea research</td><td>Perplexity AI</td><td>Real-time web + source citations</td><td>Free / $20/mo</td></tr>
+      <tr><td>Research + outline</td><td>Claude Pro</td><td>Best at following complex briefs</td><td>$20/mo</td></tr>
+      <tr><td>Drafting</td><td>Claude Pro</td><td>Best long-form writing quality</td><td>Included</td></tr>
+      <tr><td>Grammar + polish</td><td>Grammarly</td><td>Catches what you miss when tired</td><td>Free / $12/mo</td></tr>
+      <tr><td>Content management</td><td>Notion</td><td>Single place for briefs, drafts, calendar</td><td>Free / $10/mo</td></tr>
+      <tr><td>Scheduling</td><td>Buffer</td><td>Distribute finished pieces across channels</td><td>Free / $15/mo</td></tr>
+    </tbody>
+  </table>
+
+  <p>Total cost for a complete system: <strong>$32–$67/month</strong> depending on which paid tiers you need. For anyone producing content professionally, this is well within a sensible budget.</p>
+
+  <hr>
+
+  <h2>The part AI can't do</h2>
+
+  <p>The mistake people make with AI content workflows is thinking the AI is the writer. It isn't. You are. The AI is a very fast, very well-read research assistant and first-draft machine. The thing that makes content worth reading — the opinion, the experience, the specific example from your own work — that has to come from you.</p>
+
+  <p>If you read through a finished draft and there's nothing in it that only you could have written, the draft isn't done. That's the heuristic. It sounds simple. It's harder to apply than it sounds.</p>
+
+  <div class="pull-quote">
+    <p>"AI handles the scaffolding. You handle everything that makes the building worth entering."</p>
+  </div>
+
+  <div class="verdict">
+    <div class="verdict-label">// Key takeaway</div>
+    <p>The best AI content workflows are not fully automated. They're <strong>AI-accelerated with human judgment at every key decision point.</strong> The output is faster and better than either the human or the AI could produce alone.</p>
+  </div>
+
+  <div class="upsell-box">
+    <div class="upsell-label">// Tools mentioned</div>
+    <h3>Find the right AI tools for your workflow</h3>
+    <p>We've reviewed all the tools in this stack. Start with our AI writing tool roundup.</p>
+    <div class="upsell-links">
+      <a href="best-ai-writing-tools.html" class="upsell-link">Best AI Writing Tools →</a>
+      <a href="chatgpt-vs-claude.html" class="upsell-link secondary">ChatGPT vs Claude</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer" style="background:var(--ink);border-top:1px solid rgba(255,255,255,0.06);padding:28px 36px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,255,255,0.25)">© 2026 Profit Pilot · Independent</div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <a href="about.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">About</a>
+      <a href="how-we-test.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">How We Test</a>
+      <a href="disclosure.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Disclosure</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var t=localStorage.getItem('pp-theme');
+  if(t==='light')document.documentElement.setAttribute('data-theme','light');
+  document.getElementById('themeToggle').addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(cur==='light'){document.documentElement.removeAttribute('data-theme');localStorage.setItem('pp-theme','dark');}
+    else{document.documentElement.setAttribute('data-theme','light');localStorage.setItem('pp-theme','light');}
+  });
+})();
+</script>
+</body>
+</html>

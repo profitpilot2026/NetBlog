@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT vs Claude for Marketing: Which One Wins? | Profit Pilot</title>
+<meta name="description" content="We tested ChatGPT and Claude head-to-head on real marketing tasks — long-form content, email copy, ad creative, and research. Here's who wins each category.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://theprofitpilotai.netlify.app/chatgpt-vs-claude.html">
+<meta property="og:title" content="ChatGPT vs Claude for Marketing: Which One Wins?">
+<meta property="og:image" content="https://theprofitpilotai.netlify.app/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.vs-hero{
+  width:100%;height:280px;
+  background:linear-gradient(135deg,#0E1520 0%,#0A0A0F 50%,#150E20 100%);
+  border-radius:16px;display:flex;align-items:center;justify-content:center;
+  margin-bottom:48px;position:relative;overflow:hidden;
+}
+.vs-hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 25% 50%,rgba(0,217,200,0.12) 0%,transparent 55%),
+             radial-gradient(ellipse at 75% 50%,rgba(168,143,255,0.12) 0%,transparent 55%);}
+.vs-inner{position:relative;z-index:1;display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:center}
+.vs-side{text-align:center}
+.vs-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(22px,3vw,36px);font-weight:800;color:#fff;letter-spacing:-1px}
+.vs-sub{font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1.5px;margin-top:6px}
+.vs-divider{font-family:'Space Mono',monospace;font-size:32px;color:rgba(255,255,255,0.15);font-weight:700}
+.winner-badge{display:inline-block;background:var(--accent2);color:#0A0A0F;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:1px;margin-top:8px}
+.round-table{width:100%;border-collapse:collapse;margin:28px 0 36px;font-size:14px;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.round-table thead tr{background:var(--ink)}
+[data-theme="light"] .round-table thead tr{background:#1A0E30}
+.round-table th{padding:13px 16px;text-align:left;font-weight:700;font-size:12px;font-family:'Space Mono',monospace;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:0.5px}
+.round-table td{padding:13px 16px;border-bottom:1px solid var(--border);color:var(--body-text);font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;background:var(--surface)}
+.round-table tr:last-child td{border-bottom:none}
+.round-table tr:nth-child(even) td{background:var(--surface2)}
+.win-chatgpt{color:var(--accent2);font-weight:700}
+.win-claude{color:var(--accent);font-weight:700}
+.win-tie{color:var(--accent3);font-weight:700}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">PROFIT<span>PILOT</span> <span class="logo-star">✦</span></a>
+  <div class="nav-right">
+    <a href="articles.html" class="nav-link">AI Tools</a>
+    <a href="comparisons.html" class="nav-link">Comparisons</a>
+    <a href="blog.html" class="nav-link">Guides</a>
+    <a href="index.html#newsletter" class="nav-link">Newsletter</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="quiz.html" class="nav-pill">Find My AI Tool →</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="toggle-icon-dark">☽</span>
+      <span class="toggle-icon-light">◑</span>
+    </button>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="hero-inner">
+    <div class="hero-tag"><span class="star-g" style="font-size:10px">✦</span> Comparison · AI Writing</div>
+    <h1 class="article-title">ChatGPT vs Claude<br><em>for Marketing Work</em></h1>
+    <p class="hero-sub">Both cost $20/month. Both are excellent. The question is which one fits your specific workflow — and the answer actually depends on what you're writing.</p>
+    <div class="hero-meta">
+      <span class="meta-item">By Profit Pilot</span>
+      <span class="meta-item">Updated May 2025</span>
+      <span class="meta-item">6 min read</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="vs-hero">
+    <div class="vs-inner">
+      <div class="vs-side">
+        <div class="vs-name">ChatGPT</div>
+        <div class="vs-sub">OpenAI · GPT-4o</div>
+        <div class="winner-badge" style="background:var(--accent2)">Wins: versatility</div>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-side">
+        <div class="vs-name">Claude</div>
+        <div class="vs-sub">Anthropic · Claude 3.5</div>
+        <div class="winner-badge" style="background:var(--accent)">Wins: long-form</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="lead">At $20/month each, ChatGPT Plus and Claude Pro are the two tools every marketer is choosing between. Both use state-of-the-art models. Both handle most writing tasks well. The differences are real but subtle — and they matter a lot depending on how you work.</p>
+
+  <p>We ran both through identical tasks across six categories of marketing work, scoring each on output quality, instruction-following, and how much editing was required before the output was usable.</p>
+
+  <hr>
+
+  <h2>Head-to-head results</h2>
+
+  <table class="round-table">
+    <thead>
+      <tr><th>Task category</th><th>ChatGPT</th><th>Claude</th><th>Winner</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Long-form blog posts</strong></td>
+        <td>Good structure, slightly generic tone</td>
+        <td>More nuanced, better narrative flow</td>
+        <td class="win-claude">Claude</td>
+      </tr>
+      <tr>
+        <td><strong>Email marketing copy</strong></td>
+        <td>Strong subject lines, punchy CTAs</td>
+        <td>Better personalisation, warmer tone</td>
+        <td class="win-tie">Tie</td>
+      </tr>
+      <tr>
+        <td><strong>Ad copy (Google/Meta)</strong></td>
+        <td>More variation, better hooks</td>
+        <td>More conservative, fewer surprises</td>
+        <td class="win-chatgpt">ChatGPT</td>
+      </tr>
+      <tr>
+        <td><strong>Research summaries</strong></td>
+        <td>Good with web browsing enabled</td>
+        <td>Excellent synthesis, better citations</td>
+        <td class="win-claude">Claude</td>
+      </tr>
+      <tr>
+        <td><strong>Social media posts</strong></td>
+        <td>More platform-aware, better hooks</td>
+        <td>More thoughtful, less punchy</td>
+        <td class="win-chatgpt">ChatGPT</td>
+      </tr>
+      <tr>
+        <td><strong>Brand voice matching</strong></td>
+        <td>Decent with system prompts</td>
+        <td>Noticeably better at tone mimicry</td>
+        <td class="win-claude">Claude</td>
+      </tr>
+      <tr>
+        <td><strong>Creative briefs</strong></td>
+        <td>More ideas, more variation</td>
+        <td>More focused, better reasoning</td>
+        <td class="win-tie">Tie</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h2>Where ChatGPT wins</h2>
+
+  <p><strong>Versatility and plugins.</strong> ChatGPT's plugin and GPT ecosystem is unmatched. You can browse the web, generate images with DALL-E, run code, and connect to third-party tools — all within one interface. For marketers who need a Swiss Army knife, ChatGPT is it.</p>
+
+  <p><strong>Short-form and punchy copy.</strong> For ad copy, social hooks, and headlines, ChatGPT tends to produce more varied, attention-grabbing outputs. It takes more creative risks, which matters when you're split-testing.</p>
+
+  <p><strong>Instruction diversity.</strong> When you give ChatGPT a vague brief, it tends to produce more varied output options. This is useful for brainstorming — less useful when you need precision.</p>
+
+  <hr>
+
+  <h2>Where Claude wins</h2>
+
+  <p><strong>Long-form content quality.</strong> Claude's long-form writing is noticeably better — more cohesive narratives, better argument structure, less filler. If you write articles, reports, or long email sequences, the difference is real and consistent.</p>
+
+  <p><strong>Instruction following.</strong> Give Claude a complex, multi-part brief and it follows it more precisely. It's less likely to drift, ignore constraints, or add things you didn't ask for. For marketers with detailed brand guidelines, this matters.</p>
+
+  <p><strong>Tone and voice matching.</strong> Claude picks up on writing style cues better than ChatGPT. Paste in three examples of your brand voice and ask it to match — Claude does this more convincingly.</p>
+
+  <div class="hot-take">
+    <div class="hot-take-label">// The honest summary</div>
+    <p>ChatGPT is better for short-form, versatility, and creative variation. Claude is better for long-form, precision, and voice consistency. Most serious marketers end up using both.</p>
+  </div>
+
+  <hr>
+
+  <h2>Pricing and access</h2>
+
+  <table>
+    <thead><tr><th></th><th>ChatGPT Plus</th><th>Claude Pro</th></tr></thead>
+    <tbody>
+      <tr><td>Price</td><td>$20/month</td><td>$20/month</td></tr>
+      <tr><td>Free tier</td><td>Yes (GPT-3.5 + limited GPT-4)</td><td>Yes (limited messages)</td></tr>
+      <tr><td>Image generation</td><td>Yes (DALL-E 3)</td><td>No</td></tr>
+      <tr><td>Web browsing</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>Context window</td><td>128k tokens</td><td>200k tokens</td></tr>
+      <tr><td>File uploads</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>API access</td><td>Separate (pay per use)</td><td>Separate (pay per use)</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h2>Which one should you get?</h2>
+
+  <p><strong>Get ChatGPT Plus if:</strong> you need image generation, you work across a wide range of tasks beyond writing, you want plugin/GPT integrations, or your primary use is short-form and ad copy.</p>
+
+  <p><strong>Get Claude Pro if:</strong> you write a lot of long-form content, you need precise instruction-following, you work with detailed brand guidelines, or you process large documents regularly.</p>
+
+  <p><strong>Get both if:</strong> you're a full-time content marketer or agency operator. At $40/month combined, having both tools available for different tasks is genuinely worth it.</p>
+
+  <div class="verdict">
+    <div class="verdict-label">// Verdict</div>
+    <p>There is no universal winner. <strong>ChatGPT is the more versatile tool. Claude is the better writer.</strong> The right choice depends on whether you need breadth (ChatGPT) or depth (Claude) — and many professional marketers have concluded the answer is both.</p>
+  </div>
+
+  <div class="upsell-box">
+    <div class="upsell-label">// Read next</div>
+    <h3>See all AI writing tool comparisons</h3>
+    <p>We've tested Jasper, Copy.ai, Writesonic, and more against the same framework.</p>
+    <div class="upsell-links">
+      <a href="comparisons.html" class="upsell-link">All Comparisons →</a>
+      <a href="jasper-review.html" class="upsell-link secondary">Jasper Review</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer" style="background:var(--ink);border-top:1px solid rgba(255,255,255,0.06);padding:28px 36px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,255,255,0.25)">© 2026 Profit Pilot · Independent</div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <a href="about.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">About</a>
+      <a href="how-we-test.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">How We Test</a>
+      <a href="disclosure.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Disclosure</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=localStorage.getItem('pp-theme');
+  if(t==='light')document.documentElement.setAttribute('data-theme','light');
+  document.getElementById('themeToggle').addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(cur==='light'){document.documentElement.removeAttribute('data-theme');localStorage.setItem('pp-theme','dark');}
+    else{document.documentElement.setAttribute('data-theme','light');localStorage.setItem('pp-theme','light');}
+  });
+})();
+</script>
+</body>
+</html>

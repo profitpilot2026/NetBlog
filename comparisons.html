@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tool Comparisons | Profit Pilot</title>
+<meta name="description" content="Head-to-head AI tool comparisons tested on real marketing and content tasks. Find out which tool wins for your specific use case.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theprofitpilotai.netlify.app/comparisons.html">
+<meta property="og:title" content="AI Tool Comparisons | Profit Pilot">
+<meta property="og:description" content="Head-to-head AI tool comparisons tested on real marketing tasks. Find out which tool wins for your use case.">
+<meta property="og:image" content="https://theprofitpilotai.netlify.app/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero{background:var(--bg);padding:72px 36px 60px;position:relative;overflow:hidden;text-align:center}
+.page-hero::before{content:'✦        ✦              ✦        ✦';position:absolute;top:16px;left:0;right:0;font-size:9px;color:rgba(255,229,102,0.14);letter-spacing:36px;text-align:center;pointer-events:none}
+.page-hero::after{content:'';position:absolute;top:-150px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse at 50% 30%,rgba(168,143,255,0.1) 0%,transparent 65%);pointer-events:none}
+.page-hero-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
+.page-kicker{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:8px}
+.page-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(32px,5vw,56px);font-weight:800;color:var(--text);letter-spacing:-2px;margin-bottom:14px;line-height:1.06}
+.page-hero p{font-family:'Lora',serif;font-size:17px;color:var(--body-text);font-style:italic;line-height:1.7;max-width:500px;margin:0 auto}
+
+.cmp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:8px}
+.cmp-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;overflow:hidden;transition:all 0.2s;
+  text-decoration:none;display:block;
+}
+.cmp-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 12px 32px rgba(168,143,255,0.1)}
+.cmp-card-thumb{
+  height:160px;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.cmp-thumb-inner{
+  display:flex;align-items:center;gap:20px;position:relative;z-index:1;
+}
+.cmp-name-a,.cmp-name-b{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:18px;font-weight:800;color:#fff;
+  letter-spacing:-0.5px;
+}
+.cmp-vs{font-family:'Space Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);font-weight:700}
+.cmp-card-body{padding:20px 22px 22px}
+.cmp-tag{font-family:'Space Mono',monospace;font-size:9px;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.cmp-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px;letter-spacing:-0.2px;line-height:1.3}
+.cmp-desc{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.cmp-meta{font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;display:flex;gap:14px}
+.cmp-winner{display:inline-flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:9px;color:var(--accent2);text-transform:uppercase;letter-spacing:1px;margin-top:12px}
+
+.section{max-width:1100px;margin:0 auto;padding:64px 36px}
+.section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:12px}
+.section-label{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.section-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(20px,2.5vw,26px);font-weight:800;color:var(--text);letter-spacing:-0.5px}
+
+@media(max-width:640px){.cmp-grid{grid-template-columns:1fr}.page-hero{padding:52px 20px 44px}.section{padding:44px 20px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">PROFIT<span>PILOT</span> <span class="logo-star">✦</span></a>
+  <div class="nav-right">
+    <a href="articles.html" class="nav-link">AI Tools</a>
+    <a href="comparisons.html" class="nav-link" style="color:#fff">Comparisons</a>
+    <a href="blog.html" class="nav-link">Guides</a>
+    <a href="index.html#newsletter" class="nav-link">Newsletter</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="quiz.html" class="nav-pill">Find My AI Tool →</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="toggle-icon-dark">☽</span>
+      <span class="toggle-icon-light">◑</span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-kicker"><span class="star-y" style="font-size:10px">✦</span> Head-to-head · Tested on real tasks</div>
+    <h1>AI Tool Comparisons</h1>
+    <p>We run the same tasks on competing tools and tell you clearly which one wins — and for what kind of work.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <div>
+      <div class="section-label"><span class="star-y" style="font-size:10px">✦</span> Writing tools</div>
+      <div class="section-title">AI writing — head to head</div>
+    </div>
+  </div>
+
+  <div class="cmp-grid">
+
+    <a href="chatgpt-vs-claude.html" class="cmp-card">
+      <div class="cmp-card-thumb" style="background:linear-gradient(135deg,#0E1520 0%,#150E20 100%)">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 25% 50%,rgba(0,217,200,0.12) 0%,transparent 55%),radial-gradient(ellipse at 75% 50%,rgba(168,143,255,0.12) 0%,transparent 55%)"></div>
+        <div class="cmp-thumb-inner">
+          <div class="cmp-name-a">ChatGPT</div>
+          <div class="cmp-vs">VS</div>
+          <div class="cmp-name-b">Claude</div>
+        </div>
+      </div>
+      <div class="cmp-card-body">
+        <div class="cmp-tag">Comparison</div>
+        <div class="cmp-title">ChatGPT vs Claude for Marketing Work</div>
+        <div class="cmp-desc">Both cost $20/month. Both are excellent. Which one fits your workflow — and does the answer change based on what you're writing?</div>
+        <div class="cmp-meta"><span>6 min read</span><span>Updated May 2025</span></div>
+        <div class="cmp-winner"><span class="star-g" style="font-size:9px">✦</span> Claude wins long-form · ChatGPT wins versatility</div>
+      </div>
+    </a>
+
+    <a href="jasper-vs-copyai.html" class="cmp-card">
+      <div class="cmp-card-thumb" style="background:linear-gradient(135deg,#1A0E20 0%,#0E1A10 100%)">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(168,143,255,0.1) 0%,transparent 55%)"></div>
+        <div class="cmp-thumb-inner">
+          <div class="cmp-name-a">Jasper</div>
+          <div class="cmp-vs">VS</div>
+          <div class="cmp-name-b">Copy.ai</div>
+        </div>
+      </div>
+      <div class="cmp-card-body">
+        <div class="cmp-tag">Comparison</div>
+        <div class="cmp-title">Jasper vs Copy.ai: Which Is Worth the Money?</div>
+        <div class="cmp-desc">Two of the most-marketed AI writing tools. We tested them on identical tasks to find out which actually earns its subscription.</div>
+        <div class="cmp-meta"><span>7 min read</span><span>Updated May 2025</span></div>
+        <div class="cmp-winner"><span class="star-g" style="font-size:9px">✦</span> Depends on team size</div>
+      </div>
+    </a>
+
+    <a href="chatgpt-vs-gemini.html" class="cmp-card">
+      <div class="cmp-card-thumb" style="background:linear-gradient(135deg,#0A1520 0%,#101A0A 100%)">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(0,217,200,0.1) 0%,transparent 55%)"></div>
+        <div class="cmp-thumb-inner">
+          <div class="cmp-name-a">ChatGPT</div>
+          <div class="cmp-vs">VS</div>
+          <div class="cmp-name-b">Gemini</div>
+        </div>
+      </div>
+      <div class="cmp-card-body">
+        <div class="cmp-tag">Comparison</div>
+        <div class="cmp-title">ChatGPT vs Gemini for Content Marketing</div>
+        <div class="cmp-desc">Google's model has improved significantly. We tested both on blog writing, research, and ad copy to see if it's worth switching.</div>
+        <div class="cmp-meta"><span>5 min read</span><span>Updated May 2025</span></div>
+        <div class="cmp-winner"><span class="star-y" style="font-size:9px">✦</span> ChatGPT still leads for most tasks</div>
+      </div>
+    </a>
+
+    <a href="glean-vs-chatgpt.html" class="cmp-card">
+      <div class="cmp-card-thumb" style="background:linear-gradient(135deg,#1A1A0A 0%,#0A0A1A 100%)">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(255,184,74,0.1) 0%,transparent 55%)"></div>
+        <div class="cmp-thumb-inner">
+          <div class="cmp-name-a">Glean</div>
+          <div class="cmp-vs">VS</div>
+          <div class="cmp-name-b">ChatGPT</div>
+        </div>
+      </div>
+      <div class="cmp-card-body">
+        <div class="cmp-tag">Comparison · Enterprise</div>
+        <div class="cmp-title">Glean vs ChatGPT for Enterprise Teams</div>
+        <div class="cmp-desc">Glean is built for internal knowledge retrieval. ChatGPT is a general assistant. Here's when one beats the other for business teams.</div>
+        <div class="cmp-meta"><span>6 min read</span><span>Updated May 2025</span></div>
+        <div class="cmp-winner"><span class="star-y" style="font-size:9px">✦</span> Different use cases entirely</div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<div style="border-top:1px solid var(--border)"></div>
+
+<div class="section" style="padding-top:56px;padding-bottom:80px">
+  <div class="section-header">
+    <div>
+      <div class="section-label"><span class="star-g" style="font-size:10px">✦</span> Looking for reviews instead?</div>
+      <div class="section-title">Single-tool deep dives</div>
+    </div>
+    <a href="articles.html" class="section-link" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;color:var(--accent)">All reviews →</a>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+    <a href="jasper-review.html" style="text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;transition:all 0.2s;display:block" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px">Review · Score 7.4/10</div>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px">Jasper AI Review 2025</div>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--muted);line-height:1.6">Is the $49/month still justified? We ran 40+ real tasks to find out.</div>
+    </a>
+    <a href="chatgpt-plus-vs-free.html" style="text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;transition:all 0.2s;display:block" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px">Review · Pricing</div>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px">ChatGPT Plus vs Free</div>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--muted);line-height:1.6">Is ChatGPT Plus worth $20/month? Honest breakdown for marketers.</div>
+    </a>
+    <a href="best-ai-writing-tools.html" style="text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;transition:all 0.2s;display:block" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px">Roundup · 10 tools</div>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px">Best AI Writing Tools 2025</div>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--muted);line-height:1.6">7 we'd recommend and 3 we'd skip — tested on real content tasks.</div>
+    </a>
+  </div>
+</div>
+
+<footer class="site-footer" style="background:var(--ink);border-top:1px solid rgba(255,255,255,0.06);padding:28px 36px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,255,255,0.25)">© 2026 Profit Pilot · Independent</div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <a href="about.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">About</a>
+      <a href="how-we-test.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">How We Test</a>
+      <a href="editorial-policy.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Editorial Policy</a>
+      <a href="disclosure.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Disclosure</a>
+      <a href="privacy.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=localStorage.getItem('pp-theme');
+  if(t==='light')document.documentElement.setAttribute('data-theme','light');
+  document.getElementById('themeToggle').addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(cur==='light'){document.documentElement.removeAttribute('data-theme');localStorage.setItem('pp-theme','dark');}
+    else{document.documentElement.setAttribute('data-theme','light');localStorage.setItem('pp-theme','light');}
+  });
+})();
+</script>
+</body>
+</html>
