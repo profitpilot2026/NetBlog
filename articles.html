@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articles — In-Depth Analysis | Profit Pilot</title>
+<meta name="description" content="In-depth articles on technology, finance, global politics, and AI tools. Published every two days.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theprofitpilotai.netlify.app/articles.html">
+<meta property="og:title" content="Articles — In-Depth Analysis | Profit Pilot">
+<meta property="og:description" content="In-depth articles on technology, finance, global politics, and AI tools. Published every two days.">
+<meta property="og:image" content="https://theprofitpilotai.netlify.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Articles — In-Depth Analysis | Profit Pilot">
+<meta name="twitter:description" content="In-depth articles on technology, finance, global politics, and AI tools. Published every two days.">
+<meta name="twitter:image" content="https://theprofitpilotai.netlify.app/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero{background:var(--ink);padding:56px 36px 48px}
+.page-hero-inner{max-width:1100px;margin:0 auto}
+.page-kicker{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+.page-hero h1{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;color:#fff;letter-spacing:-1.5px;margin-bottom:12px}
+.page-hero p{font-family:'Lora',serif;font-size:17px;color:rgba(255,255,255,0.5);font-style:italic;max-width:520px;line-height:1.65}
+
+.main{max-width:1100px;margin:0 auto;padding:56px 36px}
+
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.filter-btn{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;padding:7px 16px;border-radius:99px;border:1px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;transition:all 0.2s}
+.filter-btn:hover,.filter-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.acard{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--border);transition:all 0.25s;display:flex;flex-direction:column}
+.acard:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(17,24,39,0.1);border-color:transparent}
+.acard-top{height:180px;display:flex;align-items:center;justify-content:center;font-size:46px;position:relative}
+.acard-badge{position:absolute;top:12px;left:12px;background:rgba(255,255,255,0.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.18);color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 10px;border-radius:99px;font-family:'Inter',sans-serif}
+.acard-body{padding:22px;flex:1;display:flex;flex-direction:column}
+.acard-title{font-family:'Inter',sans-serif;font-size:16px;font-weight:700;line-height:1.35;color:var(--ink);margin-bottom:8px;letter-spacing:-0.2px}
+.acard-desc{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);line-height:1.6;flex:1;margin-bottom:16px}
+.acard-foot{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border)}
+.acard-read{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;color:var(--accent)}
+.acard-mins{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted)}
+
+footer{background:var(--ink);color:rgba(255,255,255,0.4);text-align:center;padding:24px;font-family:'Space Mono',monospace;font-size:10px;margin-top:64px}
+
+@media(max-width:640px){.main{padding:36px 20px}.page-hero{padding:40px 20px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">PROFIT<span>PILOT</span></a>
+  <div class="nav-right">
+    <a href="articles.html" class="nav-link">AI Tools</a>
+    <a href="articles.html" class="nav-link">Comparisons</a>
+    <a href="blog.html" class="nav-link">Guides</a>
+    <a href="index.html#newsletter" class="nav-link">Newsletter</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="quiz.html" class="nav-pill">Find My AI Tool →</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="toggle-icon-dark">☽</span>
+      <span class="toggle-icon-light">◑</span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-kicker">// Published Every Two Days</div>
+    <h1>In-Depth Articles</h1>
+    <p>Long-form analysis on technology, finance, global politics, and AI tools. Written to actually explain things, not just report them.</p>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterArticles('all',this)">All</button>
+    <button class="filter-btn" onclick="filterArticles('tech',this)">Technology</button>
+    <button class="filter-btn" onclick="filterArticles('finance',this)">Finance</button>
+    <button class="filter-btn" onclick="filterArticles('politics',this)">Global Politics</button>
+    <button class="filter-btn" onclick="filterArticles('ai',this)">AI Tools</button>
+  </div>
+
+  <div class="articles-grid" id="articles-grid">
+
+    <a href="chatgpt-vs-gemini.html" class="acard" data-cat="ai">
+      <div class="acard-top" style="background:linear-gradient(135deg,#0d1a2e,#0e3040)">⚔️<span class="acard-badge">Head-to-Head</span></div>
+      <div class="acard-body">
+        <div class="acard-title">ChatGPT vs Gemini in 2026: Which One Is Actually Better?</div>
+        <div class="acard-desc">I used Gemini as my main AI for two weeks. Here's what surprised me — and which one wins for each type of work.</div>
+        <div class="acard-foot"><span class="acard-read">Read review →</span><span class="acard-mins">7 min</span></div>
+      </div>
+    </a>
+
+    <a href="claude-vs-chatgpt.html" class="acard" data-cat="ai">
+      <div class="acard-top" style="background:linear-gradient(135deg,#0B1520,#0e2540)">🤖<span class="acard-badge">AI Tools</span></div>
+      <div class="acard-body">
+        <div class="acard-title">Claude vs ChatGPT: What Nobody Else Will Tell You</div>
+        <div class="acard-desc">One month. Two AIs. Here's the verdict nobody else is giving you.</div>
+        <div class="acard-foot"><span class="acard-read">Read article →</span><span class="acard-mins">7 min</span></div>
+      </div>
+    </a>
+
+    <a href="jasper-vs-copyai.html" class="acard" data-cat="ai">
+      <div class="acard-top" style="background:linear-gradient(135deg,#1a0b20,#2d0e3d)">✍️<span class="acard-badge">AI Writing</span></div>
+      <div class="acard-body">
+        <div class="acard-title">Jasper vs Copy.ai: Which One Is Actually Worth $49/Month?</div>
+        <div class="acard-desc">Both promise to 10x your output. One of them lied.</div>
+        <div class="acard-foot"><span class="acard-read">Read article →</span><span class="acard-mins">7 min</span></div>
+      </div>
+    </a>
+
+    <a href="glean-vs-chatgpt.html" class="acard" data-cat="ai">
+      <div class="acard-top" style="background:linear-gradient(135deg,#0b1a10,#0e3d1e)">🔍<span class="acard-badge">Enterprise</span></div>
+      <div class="acard-body">
+        <div class="acard-title">Glean vs ChatGPT: Two Different Problems, Two Different Tools</div>
+        <div class="acard-desc">One searches what your company knows. The other knows everything else.</div>
+        <div class="acard-foot"><span class="acard-read">Read article →</span><span class="acard-mins">6 min</span></div>
+      </div>
+    </a>
+
+    <a href="chatgpt-plus-vs-free.html" class="acard" data-cat="ai">
+      <div class="acard-top" style="background:linear-gradient(135deg,#1a2e1a,#0d3d1a)">💰<span class="acard-badge">Pricing</span></div>
+      <div class="acard-body">
+        <div class="acard-title">ChatGPT Plus vs Free: Is $20/Month Actually Worth It?</div>
+        <div class="acard-desc">I ran both plans back-to-back. The answer might surprise you.</div>
+        <div class="acard-foot"><span class="acard-read">Read article →</span><span class="acard-mins">7 min</span></div>
+      </div>
+    </a>
+
+    <a href="ai-stack-for-free.html" class="acard" data-cat="ai">
+      <div class="acard-top" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">💸<span class="acard-badge">Money</span></div>
+      <div class="acard-body">
+        <div class="acard-title">The $0 AI Stack That Replaced My $200/Month Setup</div>
+        <div class="acard-desc">I cancelled everything. Six weeks later — here's the honest report.</div>
+        <div class="acard-foot"><span class="acard-read">Read article →</span><span class="acard-mins">8 min</span></div>
+      </div>
+    </a>
+
+    <a href="ai-writing-mistakes.html" class="acard" data-cat="ai">
+      <div class="acard-top" style="background:linear-gradient(135deg,#2d1b1b,#3d1515)">✋<span class="acard-badge">Strategy</span></div>
+      <div class="acard-body">
+        <div class="acard-title">7 Ways You're Using AI Writing Tools Wrong</div>
+        <div class="acard-desc">The problem isn't the tool. It's how you're using it.</div>
+        <div class="acard-foot"><span class="acard-read">Read article →</span><span class="acard-mins">9 min</span></div>
+      </div>
+    </a>
+
+    <a href="best-ai-tools-freelancers.html" class="acard" data-cat="ai">
+      <div class="acard-top" style="background:linear-gradient(135deg,#0d0b1f,#1a1540)">🧰<span class="acard-badge">Freelancers</span></div>
+      <div class="acard-body">
+        <div class="acard-title">Best AI Tools for Freelancers That Actually Pay for Themselves</div>
+        <div class="acard-desc">The only tools worth subscribing to are the ones that earn back more than they cost. Here's what clears that bar.</div>
+        <div class="acard-foot"><span class="acard-read">Read article →</span><span class="acard-mins">8 min</span></div>
+      </div>
+    </a>
+
+    <a href="make-money-ai-tools.html" class="acard" data-cat="ai">
+      <div class="acard-top" style="background:linear-gradient(135deg,#0d2818,#1a4a2e)">🚀<span class="acard-badge">Income</span></div>
+      <div class="acard-body">
+        <div class="acard-title">How to Actually Make Money With AI Tools in 2026</div>
+        <div class="acard-desc">Real methods, real numbers. Not theory.</div>
+        <div class="acard-foot"><span class="acard-read">Read article →</span><span class="acard-mins">10 min</span></div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<footer style="background:var(--ink);border-top:1px solid rgba(255,255,255,0.06);padding:28px 36px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,255,255,0.25)">© 2026 Profit Pilot · Independent</div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <a href="about.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">About</a>
+      <a href="how-we-test.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">How We Test</a>
+      <a href="editorial-policy.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Editorial Policy</a>
+      <a href="disclosure.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Disclosure</a>
+      <a href="privacy.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function filterArticles(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.acard').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'flex' : 'none';
+  });
+}
+</script>
+<script>
+(function(){
+  var t=localStorage.getItem('pp-theme');
+  if(t==='light')document.documentElement.setAttribute('data-theme','light');
+  document.getElementById('themeToggle').addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(cur==='light'){
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('pp-theme','dark');
+    }else{
+      document.documentElement.setAttribute('data-theme','light');
+      localStorage.setItem('pp-theme','light');
+    }
+  });
+})();
+</script>
+</body>
+</html>

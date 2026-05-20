@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name='impact-site-verification' value='063b74df-dea4-462d-bcc2-556f8647d673'>
+<meta name="google-site-verification" content="PBpYfPxwQsHTD3X1C3LfQ4mH34elY-DX_XmOEZP3zSg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profit Pilot — AI Tools for Marketers &amp; Creators</title>
+<meta name="description" content="Hands-on AI tool reviews, comparisons, and workflows for marketers and creators. Find out which AI tools are actually worth paying for — tested, not just listed.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theprofitpilotai.netlify.app/">
+<meta property="og:title" content="Profit Pilot — AI Tools for Marketers &amp; Creators">
+<meta property="og:description" content="Hands-on AI tool reviews, comparisons, and workflows for marketers and creators. Find out which AI tools are actually worth paying for.">
+<meta property="og:image" content="https://theprofitpilotai.netlify.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Profit Pilot — AI Tools for Marketers &amp; Creators">
+<meta name="twitter:description" content="Hands-on AI tool reviews, comparisons, and workflows for marketers and creators.">
+<meta name="twitter:image" content="https://theprofitpilotai.netlify.app/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+
+/* ── HERO ── */
+.hero{
+  background:var(--bg);
+  padding:96px 36px 88px;
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+}
+.hero::before{
+  content:'✦        ✦              ✦        ✦';
+  position:absolute;top:20px;left:0;right:0;
+  font-size:9px;color:rgba(255,229,102,0.18);
+  letter-spacing:36px;text-align:center;pointer-events:none;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  top:-200px;left:50%;transform:translateX(-50%);
+  width:900px;height:600px;
+  background:radial-gradient(ellipse at 50% 30%,rgba(168,143,255,0.13) 0%,rgba(0,217,200,0.04) 40%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{max-width:780px;margin:0 auto;position:relative;z-index:1}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Space Mono',monospace;font-size:10px;
+  color:var(--accent);text-transform:uppercase;letter-spacing:2px;
+  margin-bottom:28px;
+}
+.hero-kicker-dot{width:5px;height:5px;background:var(--accent2);border-radius:50%;display:inline-block;animation:twinkle 2s ease-in-out infinite}
+.hero h1{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(36px,6vw,72px);
+  font-weight:800;
+  line-height:1.04;
+  letter-spacing:-2.5px;
+  color:var(--text);
+  margin-bottom:24px;
+}
+.hero h1 .grad{
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero h1 .star-accent{
+  color:var(--star1);
+  -webkit-text-fill-color:var(--star1);
+}
+.hero-sub{
+  font-family:'Lora',serif;
+  font-size:18px;
+  color:var(--body-text);
+  line-height:1.75;
+  font-style:italic;
+  margin:0 auto 40px;
+  max-width:560px;
+}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
+.btn-primary{
+  background:var(--accent);color:#fff;
+  padding:14px 30px;border-radius:8px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:14px;font-weight:700;
+  transition:all 0.2s;
+  letter-spacing:-0.1px;
+}
+.btn-primary:hover{opacity:0.88;transform:translateY(-2px)}
+.btn-ghost{
+  background:transparent;color:var(--text);
+  padding:14px 26px;border-radius:8px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:14px;font-weight:600;
+  border:1px solid var(--border);
+  transition:all 0.2s;
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.hero-trust{
+  display:flex;gap:28px;justify-content:center;
+  flex-wrap:wrap;
+}
+.htrust-item{
+  font-family:'Space Mono',monospace;
+  font-size:10px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:0.5px;
+  display:flex;align-items:center;gap:7px;
+}
+.htrust-dot{width:4px;height:4px;border-radius:50%;background:var(--accent2);flex-shrink:0}
+
+/* ── TRUST BAR ── */
+.trust-bar{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:var(--surface);
+  padding:0 36px;
+}
+.trust-bar-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  gap:40px;flex-wrap:wrap;
+  height:52px;
+}
+.tbar-item{
+  font-family:'Space Mono',monospace;
+  font-size:10px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:0.8px;
+  display:flex;align-items:center;gap:8px;
+}
+.tbar-item strong{
+  color:var(--text);font-weight:700;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:13px;text-transform:none;letter-spacing:0;
+}
+.tbar-sep{width:1px;height:16px;background:var(--border)}
+
+/* ── SECTION SHELL ── */
+.section{max-width:1100px;margin:0 auto;padding:72px 36px}
+.section-header{
+  display:flex;align-items:baseline;
+  justify-content:space-between;
+  margin-bottom:36px;
+  flex-wrap:wrap;gap:12px;
+}
+.section-label{
+  font-family:'Space Mono',monospace;
+  font-size:10px;color:var(--accent);
+  text-transform:uppercase;letter-spacing:2px;
+  margin-bottom:8px;
+  display:flex;align-items:center;gap:8px;
+}
+.section-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(20px,2.5vw,26px);
+  font-weight:800;color:var(--text);
+  letter-spacing:-0.5px;line-height:1.2;
+}
+.section-link{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:13px;font-weight:600;
+  color:var(--accent);
+}
+.section-link:hover{text-decoration:underline}
+
+/* ── PILLAR / CATEGORY CARDS ── */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+.pillar{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:24px 20px;
+  transition:all 0.2s;
+  cursor:pointer;
+}
+.pillar:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 12px 32px rgba(168,143,255,0.1)}
+.pillar-num{
+  font-family:'Space Mono',monospace;
+  font-size:10px;color:var(--accent);
+  text-transform:uppercase;letter-spacing:2px;
+  margin-bottom:14px;
+}
+.pillar-name{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:16px;font-weight:800;
+  color:var(--text);margin-bottom:8px;
+  letter-spacing:-0.3px;
+}
+.pillar-desc{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:13px;color:var(--muted);
+  line-height:1.6;
+}
+.pillar-count{
+  font-family:'Space Mono',monospace;
+  font-size:10px;color:var(--muted);
+  margin-top:16px;
+  text-transform:uppercase;letter-spacing:0.8px;
+}
+
+/* ── ARTICLE CARDS ── */
+.article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.article-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+  transition:all 0.2s;
+}
+.article-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 12px 32px rgba(168,143,255,0.1)}
+.card-thumb{
+  height:168px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.card-thumb-inner{
+  font-family:'Space Mono',monospace;
+  font-size:26px;letter-spacing:8px;
+  color:rgba(168,143,255,0.25);
+  user-select:none;
+}
+.card-body{padding:22px 22px 24px}
+.card-tag{
+  font-family:'Space Mono',monospace;
+  font-size:9px;text-transform:uppercase;
+  letter-spacing:1.5px;color:var(--accent);
+  margin-bottom:10px;
+  display:flex;align-items:center;gap:6px;
+}
+.card-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:16px;font-weight:700;
+  color:var(--text);line-height:1.35;
+  margin-bottom:10px;letter-spacing:-0.2px;
+}
+.card-desc{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:13px;color:var(--muted);
+  line-height:1.6;margin-bottom:18px;
+}
+.card-meta{
+  font-family:'Space Mono',monospace;
+  font-size:9px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:0.5px;
+  display:flex;gap:14px;flex-wrap:wrap;
+}
+
+/* FEATURED (wide) card */
+.article-grid.has-featured .article-card:first-child{grid-column:span 2}
+.article-grid.has-featured .article-card:first-child .card-thumb{height:220px}
+.article-grid.has-featured .article-card:first-child .card-title{font-size:20px}
+
+/* ── DIVIDER ── */
+.section-divider{border:none;border-top:1px solid var(--border);max-width:1100px;margin:0 auto}
+
+/* ── COMPARE TABLE STRIP ── */
+.compare-strip{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+}
+.compare-header{
+  padding:20px 28px;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.compare-header h3{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:16px;font-weight:800;color:var(--text);
+  letter-spacing:-0.2px;
+}
+.compare-rows{}
+.cmp-row{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr 100px;
+  gap:0;
+  border-bottom:1px solid var(--border);
+}
+.cmp-row:last-child{border-bottom:none}
+.cmp-row.head{background:var(--surface2)}
+.cmp-cell{
+  padding:14px 20px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:13px;color:var(--body-text);
+  border-right:1px solid var(--border);
+  display:flex;align-items:center;
+}
+.cmp-cell:last-child{border-right:none}
+.cmp-row.head .cmp-cell{
+  font-size:11px;font-weight:700;
+  color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;
+}
+.cmp-cell strong{color:var(--text);font-weight:700}
+.cmp-score{
+  font-family:'Space Mono',monospace;
+  font-size:13px;font-weight:700;
+  color:var(--accent);
+}
+.cmp-badge{
+  display:inline-block;
+  background:var(--accent-light);color:var(--accent);
+  font-size:10px;font-weight:700;
+  font-family:'Space Mono',monospace;
+  padding:3px 8px;border-radius:4px;
+  text-transform:uppercase;letter-spacing:0.5px;
+}
+
+/* ── NEWSLETTER ── */
+.newsletter-section{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  padding:80px 36px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.newsletter-section::before{
+  content:'✦    ✦        ✦    ✦';
+  position:absolute;bottom:20px;left:0;right:0;
+  font-size:9px;color:rgba(255,229,102,0.12);
+  letter-spacing:40px;text-align:center;pointer-events:none;
+}
+.nl-glow{
+  position:absolute;top:-160px;left:50%;transform:translateX(-50%);
+  width:700px;height:400px;
+  background:radial-gradient(ellipse,rgba(168,143,255,0.08) 0%,transparent 65%);
+  pointer-events:none;
+}
+.nl-inner{max-width:560px;margin:0 auto;position:relative;z-index:1}
+.nl-label{
+  font-family:'Space Mono',monospace;font-size:10px;
+  color:var(--accent);text-transform:uppercase;letter-spacing:2px;
+  margin-bottom:18px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.nl-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(26px,4vw,38px);
+  font-weight:800;color:var(--text);
+  letter-spacing:-1px;line-height:1.1;
+  margin-bottom:14px;
+}
+.nl-sub{
+  font-family:'Lora',serif;
+  font-size:16px;color:var(--body-text);
+  font-style:italic;line-height:1.7;
+  margin-bottom:32px;
+}
+.nl-form{
+  display:flex;gap:10px;max-width:420px;margin:0 auto 16px;
+}
+.nl-input{
+  flex:1;
+  background:var(--bg);border:1px solid var(--border);
+  color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:14px;padding:13px 18px;border-radius:8px;
+  outline:none;transition:border 0.2s;
+}
+.nl-input::placeholder{color:var(--muted)}
+.nl-input:focus{border-color:var(--accent)}
+.nl-btn{
+  background:var(--accent);color:#fff;
+  padding:13px 22px;border-radius:8px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:13px;font-weight:700;
+  border:none;cursor:pointer;
+  transition:all 0.2s;white-space:nowrap;
+}
+.nl-btn:hover{opacity:0.88;transform:translateY(-1px)}
+.nl-note{
+  font-family:'Space Mono',monospace;
+  font-size:10px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:0.5px;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .pillars{grid-template-columns:repeat(2,1fr)}
+  .article-grid{grid-template-columns:1fr}
+  .article-grid.has-featured .article-card:first-child{grid-column:span 1}
+  .cmp-row{grid-template-columns:1.4fr 1fr 1fr}
+  .cmp-cell:nth-child(4),.cmp-cell:nth-child(5){display:none}
+}
+@media(max-width:640px){
+  .hero{padding:64px 20px 56px}
+  .hero::before{display:none}
+  .section{padding:48px 20px}
+  .trust-bar{padding:0 20px}
+  .newsletter-section{padding:56px 20px}
+  .nl-form{flex-direction:column}
+  .pillars{grid-template-columns:1fr}
+  .tbar-sep{display:none}
+  .trust-bar-inner{gap:16px;height:auto;padding:14px 0}
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">PROFIT<span>PILOT</span> <span class="logo-star">✦</span></a>
+  <div class="nav-right">
+    <a href="articles.html" class="nav-link">AI Tools</a>
+    <a href="articles.html" class="nav-link">Comparisons</a>
+    <a href="blog.html" class="nav-link">Guides</a>
+    <a href="#newsletter" class="nav-link">Newsletter</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="quiz.html" class="nav-pill">Find My AI Tool →</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="toggle-icon-dark">☽</span>
+      <span class="toggle-icon-light">◑</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">
+      <span class="hero-kicker-dot"></span>
+      AI Tools · Reviews · Workflows
+    </div>
+    <h1>
+      The AI tools actually<br>
+      worth your <span class="grad">time and money</span>
+      <span class="star-y" style="font-size:0.55em;vertical-align:middle;margin-left:4px">✦</span>
+    </h1>
+    <p class="hero-sub">Hands-on reviews, honest comparisons, and practical workflows — tested by marketers and creators, not algorithms.</p>
+    <div class="hero-actions">
+      <a href="articles.html" class="btn-primary">Browse AI Tool Reviews</a>
+      <a href="quiz.html" class="btn-ghost">Find My Tool →</a>
+    </div>
+    <div class="hero-trust">
+      <span class="htrust-item"><span class="htrust-dot"></span> Hands-on tested</span>
+      <span class="htrust-item"><span class="htrust-dot"></span> No pay-to-play</span>
+      <span class="htrust-item"><span class="htrust-dot"></span> Affiliate disclosed</span>
+      <span class="htrust-item"><span class="htrust-dot"></span> Updated when tools change</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="tbar-item"><strong>10-point</strong> testing framework</div>
+    <div class="tbar-sep"></div>
+    <div class="tbar-item"><strong>Honest</strong> "who should skip it" verdicts</div>
+    <div class="tbar-sep"></div>
+    <div class="tbar-item"><strong>Zero</strong> paid placements</div>
+    <div class="tbar-sep"></div>
+    <div class="tbar-item"><strong>Reviews updated</strong> when tools change</div>
+  </div>
+</div>
+
+<!-- ── FEATURED REVIEWS ── -->
+<div class="section">
+  <div class="section-header">
+    <div>
+      <div class="section-label"><span class="star-y" style="font-size:10px">✦</span> Latest reviews</div>
+      <div class="section-title">Recently tested</div>
+    </div>
+    <a href="articles.html" class="section-link">All reviews →</a>
+  </div>
+
+  <div class="article-grid has-featured">
+
+    <a href="jasper-review.html" class="article-card" style="text-decoration:none">
+      <div class="card-thumb" style="background:linear-gradient(135deg,#1A0E30 0%,#0A0A0F 100%)">
+        <div class="card-thumb-inner">✦ ✦ ✦</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag"><span class="star-y" style="font-size:9px">✦</span> Review</div>
+        <div class="card-title">Jasper AI Review 2025: Is It Still the Best AI Writer?</div>
+        <div class="card-desc">We ran Jasper through 40+ real content tasks. Here's what it does well, where it falls short, and whether the $49/month is justified.</div>
+        <div class="card-meta">
+          <span>8 min read</span>
+          <span>Updated May 2025</span>
+          <span>Score: 7.4 / 10</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="chatgpt-vs-claude.html" class="article-card" style="text-decoration:none">
+      <div class="card-thumb" style="background:linear-gradient(135deg,#0E1A2E 0%,#0A0A0F 100%)">
+        <div class="card-thumb-inner">✦ ✦</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Comparison</div>
+        <div class="card-title">ChatGPT vs Claude for Marketing</div>
+        <div class="card-desc">Which one wins on long-form content, email copy, and creative briefs?</div>
+        <div class="card-meta"><span>6 min read</span></div>
+      </div>
+    </a>
+
+    <a href="best-ai-writing-tools.html" class="article-card" style="text-decoration:none">
+      <div class="card-thumb" style="background:linear-gradient(135deg,#1A1A0E 0%,#0A0A0F 100%)">
+        <div class="card-thumb-inner">✦</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Roundup</div>
+        <div class="card-title">Best AI Writing Tools 2025</div>
+        <div class="card-desc">The 7 tools we'd actually recommend — and the 3 we'd skip.</div>
+        <div class="card-meta"><span>10 min read</span></div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ── QUICK COMPARE ── -->
+<div class="section" style="padding-top:56px;padding-bottom:56px">
+  <div class="section-header">
+    <div>
+      <div class="section-label"><span class="star-g" style="font-size:10px">✦</span> Side by side</div>
+      <div class="section-title">AI writing tools at a glance</div>
+    </div>
+    <a href="articles.html" class="section-link">Full comparisons →</a>
+  </div>
+
+  <div class="compare-strip">
+    <div class="compare-header">
+      <h3>Writing &amp; Content Tools — May 2025</h3>
+      <span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted)">Updated monthly</span>
+    </div>
+    <div class="compare-rows">
+      <div class="cmp-row head">
+        <div class="cmp-cell">Tool</div>
+        <div class="cmp-cell">Best for</div>
+        <div class="cmp-cell">Starting price</div>
+        <div class="cmp-cell">Output quality</div>
+        <div class="cmp-cell">Score</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell"><strong>Claude (Anthropic)</strong></div>
+        <div class="cmp-cell">Long-form, nuance</div>
+        <div class="cmp-cell">Free / $20/mo</div>
+        <div class="cmp-cell">Excellent</div>
+        <div class="cmp-cell"><span class="cmp-score">8.9</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell"><strong>ChatGPT (OpenAI)</strong></div>
+        <div class="cmp-cell">Versatility</div>
+        <div class="cmp-cell">Free / $20/mo</div>
+        <div class="cmp-cell">Very good</div>
+        <div class="cmp-cell"><span class="cmp-score">8.5</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell"><strong>Jasper</strong> <span class="cmp-badge">Review</span></div>
+        <div class="cmp-cell">Marketing teams</div>
+        <div class="cmp-cell">$49/mo</div>
+        <div class="cmp-cell">Good</div>
+        <div class="cmp-cell"><span class="cmp-score">7.4</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell"><strong>Copy.ai</strong></div>
+        <div class="cmp-cell">Short-form copy</div>
+        <div class="cmp-cell">Free / $49/mo</div>
+        <div class="cmp-cell">Good</div>
+        <div class="cmp-cell"><span class="cmp-score">7.1</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell"><strong>Writesonic</strong></div>
+        <div class="cmp-cell">SEO content</div>
+        <div class="cmp-cell">$16/mo</div>
+        <div class="cmp-cell">Decent</div>
+        <div class="cmp-cell"><span class="cmp-score">6.8</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ── CONTENT PILLARS ── -->
+<div class="section">
+  <div class="section-header">
+    <div>
+      <div class="section-label"><span class="star-y2" style="font-size:10px">✦</span> What we cover</div>
+      <div class="section-title">Four areas. One focus: what works.</div>
+    </div>
+  </div>
+
+  <div class="pillars">
+    <a href="articles.html" class="pillar" style="text-decoration:none">
+      <div class="pillar-num">// 01</div>
+      <div class="pillar-name">AI Writing Tools</div>
+      <div class="pillar-desc">ChatGPT, Claude, Jasper, Copy.ai, Writesonic — tested on real content tasks with honest verdicts.</div>
+      <div class="pillar-count">Reviews &amp; comparisons</div>
+    </a>
+    <a href="articles.html" class="pillar" style="text-decoration:none">
+      <div class="pillar-num">// 02</div>
+      <div class="pillar-name">AI Research &amp; SEO</div>
+      <div class="pillar-desc">Semrush AI, Perplexity, Surfer SEO — tools that help you find and own topics before competitors do.</div>
+      <div class="pillar-count">Reviews &amp; comparisons</div>
+    </a>
+    <a href="articles.html" class="pillar" style="text-decoration:none">
+      <div class="pillar-num">// 03</div>
+      <div class="pillar-name">Content Workflows</div>
+      <div class="pillar-desc">Step-by-step guides for building AI-assisted systems that produce more with less time spent.</div>
+      <div class="pillar-count">Practical guides</div>
+    </a>
+    <a href="articles.html" class="pillar" style="text-decoration:none">
+      <div class="pillar-num">// 04</div>
+      <div class="pillar-name">Value &amp; Pricing</div>
+      <div class="pillar-desc">"Is it worth paying for?" breakdowns — comparing free tiers, paid plans, and what you actually get.</div>
+      <div class="pillar-count">Pricing analysis</div>
+    </a>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ── MORE ARTICLES ── -->
+<div class="section" style="padding-bottom:80px">
+  <div class="section-header">
+    <div>
+      <div class="section-label"><span class="star-g" style="font-size:10px">✦</span> Guides</div>
+      <div class="section-title">Practical how-tos</div>
+    </div>
+    <a href="blog.html" class="section-link">All guides →</a>
+  </div>
+
+  <div class="article-grid">
+
+    <a href="ai-content-workflow.html" class="article-card" style="text-decoration:none">
+      <div class="card-thumb" style="background:linear-gradient(135deg,#0E1A14 0%,#0A0A0F 100%)">
+        <div class="card-thumb-inner">✦</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Guide</div>
+        <div class="card-title">How to Build an AI Content Workflow From Scratch</div>
+        <div class="card-desc">The exact system I use to produce 10x more content without burning out — tool stack included.</div>
+        <div class="card-meta"><span>9 min read</span></div>
+      </div>
+    </a>
+
+    <a href="free-ai-tools.html" class="article-card" style="text-decoration:none">
+      <div class="card-thumb" style="background:linear-gradient(135deg,#1A0E18 0%,#0A0A0F 100%)">
+        <div class="card-thumb-inner">✦ ✦</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Roundup</div>
+        <div class="card-title">Best Free AI Tools for Content Marketing</div>
+        <div class="card-desc">Seven free-tier AI tools that are genuinely useful — not just watered-down demos of paid plans.</div>
+        <div class="card-meta"><span>7 min read</span></div>
+      </div>
+    </a>
+
+    <a href="ai-repurposing.html" class="article-card" style="text-decoration:none">
+      <div class="card-thumb" style="background:linear-gradient(135deg,#1A170E 0%,#0A0A0F 100%)">
+        <div class="card-thumb-inner">✦</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Guide</div>
+        <div class="card-title">Best AI Tools for Content Repurposing</div>
+        <div class="card-desc">Turn one piece of long-form content into 12 formats across every channel — without doing it manually.</div>
+        <div class="card-meta"><span>8 min read</span></div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ── NEWSLETTER ── -->
+<section class="newsletter-section" id="newsletter">
+  <div class="nl-glow"></div>
+  <div class="nl-inner">
+    <div class="nl-label">
+      <span class="star-y" style="font-size:10px">✦</span>
+      The Profit Pilot Brief
+    </div>
+    <h2 class="nl-title">AI tool updates, weekly.<br>No noise.</h2>
+    <p class="nl-sub">New reviews, pricing changes, and workflow tips — every Tuesday. Under 5 minutes to read.</p>
+    <form class="nl-form" action="#" method="post">
+      <input type="email" class="nl-input" placeholder="your@email.com" required>
+      <button type="submit" class="nl-btn">Subscribe →</button>
+    </form>
+    <div class="nl-note">Free · No spam · Unsubscribe anytime</div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer" style="background:var(--ink);border-top:1px solid rgba(255,255,255,0.06);padding:28px 36px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,255,255,0.25)">© 2026 Profit Pilot · Independent · <a href="disclosure.html" style="color:rgba(255,255,255,0.3)">Affiliate disclosure</a></div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <a href="about.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">About</a>
+      <a href="how-we-test.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">How We Test</a>
+      <a href="editorial-policy.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Editorial Policy</a>
+      <a href="disclosure.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Disclosure</a>
+      <a href="privacy.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=localStorage.getItem('pp-theme');
+  if(t==='light')document.documentElement.setAttribute('data-theme','light');
+  document.getElementById('themeToggle').addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(cur==='light'){
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('pp-theme','dark');
+    }else{
+      document.documentElement.setAttribute('data-theme','light');
+      localStorage.setItem('pp-theme','light');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

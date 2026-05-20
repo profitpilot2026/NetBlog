@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Daily Posts | Profit Pilot</title>
+<meta name="description" content="Daily posts on technology, finance, and global politics. Short, sharp, and worth your time.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theprofitpilotai.netlify.app/blog.html">
+<meta property="og:title" content="Blog — Daily Posts | Profit Pilot">
+<meta property="og:description" content="Daily posts on technology, finance, and global politics. Short, sharp, and worth your time.">
+<meta property="og:image" content="https://theprofitpilotai.netlify.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog — Daily Posts | Profit Pilot">
+<meta name="twitter:description" content="Daily posts on technology, finance, and global politics. Short, sharp, and worth your time.">
+<meta name="twitter:image" content="https://theprofitpilotai.netlify.app/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero{background:var(--ink);padding:56px 36px 48px}
+.page-hero-inner{max-width:1100px;margin:0 auto}
+.page-kicker{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+.page-hero h1{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;color:#fff;letter-spacing:-1.5px;margin-bottom:12px}
+.page-hero p{font-family:'Lora',serif;font-size:17px;color:rgba(255,255,255,0.5);font-style:italic;max-width:520px;line-height:1.65}
+.main{max-width:1100px;margin:0 auto;padding:56px 36px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.filter-btn{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;padding:7px 16px;border-radius:99px;border:1px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;transition:all 0.2s}
+.filter-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.filter-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.blog-list{display:flex;flex-direction:column}
+.blog-item{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;padding:24px 0;border-bottom:1px solid var(--border);transition:all 0.15s}
+.blog-item:hover .blog-item-title{color:var(--accent)}
+.blog-item-cat{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.cat-tech{color:#3b82f6}
+.cat-finance{color:#10b981}
+.cat-politics{color:#ef4444}
+.cat-ai{color:var(--accent)}
+.blog-item-title{font-family:'Inter',sans-serif;font-size:18px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:8px;letter-spacing:-0.3px;transition:color 0.2s}
+.blog-item-excerpt{font-family:'Lora',serif;font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:12px}
+.blog-item-meta{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);display:flex;gap:16px}
+.blog-item-read{font-family:'Inter',sans-serif;font-size:13px;font-weight:700;color:var(--accent);white-space:nowrap;margin-top:4px}
+footer{background:var(--ink);color:rgba(255,255,255,0.4);text-align:center;padding:24px;font-family:'Space Mono',monospace;font-size:10px;margin-top:64px}
+@media(max-width:640px){.main{padding:36px 20px}.page-hero{padding:40px 20px}.blog-item{grid-template-columns:1fr}.blog-item-read{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">PROFIT<span>PILOT</span></a>
+  <div class="nav-right">
+    <a href="articles.html" class="nav-link">AI Tools</a>
+    <a href="articles.html" class="nav-link">Comparisons</a>
+    <a href="blog.html" class="nav-link">Guides</a>
+    <a href="index.html#newsletter" class="nav-link">Newsletter</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="quiz.html" class="nav-pill">Find My AI Tool →</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="toggle-icon-dark">☽</span>
+      <span class="toggle-icon-light">◑</span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-kicker">// Updated Daily</div>
+    <h1>The Blog</h1>
+    <p>Short, sharp takes on tech, finance, and global politics. Posted every day.</p>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="filter('all',this)">All</button>
+    <button class="filter-btn" onclick="filter('tech',this)">Technology</button>
+    <button class="filter-btn" onclick="filter('finance',this)">Finance</button>
+    <button class="filter-btn" onclick="filter('politics',this)">Global Politics</button>
+    <button class="filter-btn" onclick="filter('ai',this)">AI Tools</button>
+  </div>
+
+  <div class="blog-list">
+
+    <!-- TECHNOLOGY — 3 posts -->
+    <a href="openai-business-model.html" class="blog-item" data-cat="tech">
+      <div>
+        <div class="blog-item-cat cat-tech">Technology</div>
+        <div class="blog-item-title">OpenAI's New Model Is Impressive. The Business Model Is the Real Story.</div>
+        <div class="blog-item-excerpt">Everyone's talking about what it can do. Nobody's asking who's paying for it — and why that matters more than the benchmark scores.</div>
+        <div class="blog-item-meta"><span>May 13, 2026</span><span>4 min read</span></div>
+      </div>
+      <span class="blog-item-read">Read →</span>
+    </a>
+
+    <a href="browser-as-os.html" class="blog-item" data-cat="tech">
+      <div>
+        <div class="blog-item-cat cat-tech">Technology</div>
+        <div class="blog-item-title">The Browser Is the New Operating System — And Nobody Built for It</div>
+        <div class="blog-item-excerpt">We spend 80% of our working lives in a browser. The software industry is still designing for the other 20%. That gap is about to close — fast.</div>
+        <div class="blog-item-meta"><span>May 12, 2026</span><span>4 min read</span></div>
+      </div>
+      <span class="blog-item-read">Read →</span>
+    </a>
+
+    <a href="tech-ai-rebranding.html" class="blog-item" data-cat="tech">
+      <div>
+        <div class="blog-item-cat cat-tech">Technology</div>
+        <div class="blog-item-title">Why Every Tech Company Is Suddenly Calling Itself an "AI Company"</div>
+        <div class="blog-item-excerpt">Adding AI to your product doesn't make you an AI company. But it does make you more fundable. Here's the rebranding game playing out in real time.</div>
+        <div class="blog-item-meta"><span>May 11, 2026</span><span>3 min read</span></div>
+      </div>
+      <span class="blog-item-read">Read →</span>
+    </a>
+
+    <!-- FINANCE — 3 posts -->
+    <a href="fed-wait-and-see.html" class="blog-item" data-cat="finance">
+      <div>
+        <div class="blog-item-cat cat-finance">Finance</div>
+        <div class="blog-item-title">Why the Fed's "Wait and See" Approach Is Starting to Worry Markets</div>
+        <div class="blog-item-excerpt">Patience is a virtue until it starts looking like paralysis. Here's what the bond market is actually pricing in right now.</div>
+        <div class="blog-item-meta"><span>May 13, 2026</span><span>3 min read</span></div>
+      </div>
+      <span class="blog-item-read">Read →</span>
+    </a>
+
+    <a href="bitcoin-90k.html" class="blog-item" data-cat="finance">
+      <div>
+        <div class="blog-item-cat cat-finance">Finance</div>
+        <div class="blog-item-title">Bitcoin at $90K: Institutional FOMO or Something More Structural?</div>
+        <div class="blog-item-excerpt">The last cycle was retail-driven and ended badly. This one looks structurally different. Here's what the on-chain data actually shows.</div>
+        <div class="blog-item-meta"><span>May 12, 2026</span><span>5 min read</span></div>
+      </div>
+      <span class="blog-item-read">Read →</span>
+    </a>
+
+    <a href="60-40-portfolio.html" class="blog-item" data-cat="finance">
+      <div>
+        <div class="blog-item-cat cat-finance">Finance</div>
+        <div class="blog-item-title">The Quiet Collapse of the 60/40 Portfolio — And What's Replacing It</div>
+        <div class="blog-item-excerpt">For 40 years, 60% stocks and 40% bonds was the default. It stopped working in 2022. Most advisors still haven't updated the playbook.</div>
+        <div class="blog-item-meta"><span>May 11, 2026</span><span>5 min read</span></div>
+      </div>
+      <span class="blog-item-read">Read →</span>
+    </a>
+
+    <!-- GLOBAL POLITICS — 3 posts -->
+    <a href="southeast-asia-realignment.html" class="blog-item" data-cat="politics">
+      <div>
+        <div class="blog-item-cat cat-politics">Global Politics</div>
+        <div class="blog-item-title">The Quiet Realignment Nobody Is Covering in Southeast Asia</div>
+        <div class="blog-item-excerpt">Three countries shifted their trade allegiances in the past 90 days. Western press barely noticed. Here's why it matters more than it looks.</div>
+        <div class="blog-item-meta"><span>May 13, 2026</span><span>5 min read</span></div>
+      </div>
+      <span class="blog-item-read">Read →</span>
+    </a>
+
+    <a href="india-pakistan-ceasefire.html" class="blog-item" data-cat="politics">
+      <div>
+        <div class="blog-item-cat cat-politics">Global Politics</div>
+        <div class="blog-item-title">What the India-Pakistan Ceasefire Actually Means for the Region</div>
+        <div class="blog-item-excerpt">The announcement is being called historic. The details suggest something more fragile. Here's the context missing from every headline.</div>
+        <div class="blog-item-meta"><span>May 12, 2026</span><span>6 min read</span></div>
+      </div>
+      <span class="blog-item-read">Read →</span>
+    </a>
+
+    <a href="europe-defence-spending.html" class="blog-item" data-cat="politics">
+      <div>
+        <div class="blog-item-cat cat-politics">Global Politics</div>
+        <div class="blog-item-title">Europe's Defence Spending Surge: Too Late, or Right on Time?</div>
+        <div class="blog-item-excerpt">NATO members are finally hitting the 2% GDP target. But the gap between spending money and building capability is wider than the numbers suggest.</div>
+        <div class="blog-item-meta"><span>May 11, 2026</span><span>4 min read</span></div>
+      </div>
+      <span class="blog-item-read">Read →</span>
+    </a>
+
+    <!-- AI TOOLS -->
+    <a href="ai-stack-for-free.html" class="blog-item" data-cat="ai">
+      <div>
+        <div class="blog-item-cat cat-ai">AI Tools</div>
+        <div class="blog-item-title">The $0 AI Stack That Replaced My $200/Month Setup</div>
+        <div class="blog-item-excerpt">I cancelled every subscription and rebuilt my workflow for free. Six weeks later — here's what actually works and what doesn't.</div>
+        <div class="blog-item-meta"><span>May 10, 2026</span><span>8 min read</span></div>
+      </div>
+      <span class="blog-item-read">Read →</span>
+    </a>
+
+  </div>
+</div>
+
+<footer style="background:var(--ink);border-top:1px solid rgba(255,255,255,0.06);padding:28px 36px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,255,255,0.25)">© 2026 Profit Pilot · Independent</div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <a href="about.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">About</a>
+      <a href="how-we-test.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">How We Test</a>
+      <a href="editorial-policy.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Editorial Policy</a>
+      <a href="disclosure.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Disclosure</a>
+      <a href="privacy.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function filter(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.blog-item').forEach(item => {
+    item.style.display = (cat === 'all' || item.dataset.cat === cat) ? 'grid' : 'none';
+  });
+}
+</script>
+<script>
+(function(){
+  var t=localStorage.getItem('pp-theme');
+  if(t==='light')document.documentElement.setAttribute('data-theme','light');
+  document.getElementById('themeToggle').addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(cur==='light'){
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('pp-theme','dark');
+    }else{
+      document.documentElement.setAttribute('data-theme','light');
+      localStorage.setItem('pp-theme','light');
+    }
+  });
+})();
+</script>
+</body>
+</html>

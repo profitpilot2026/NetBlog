@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which AI Tool Is Right For You? | Profit Pilot</title>
+<meta name="description" content="Answer 5 quick questions and find out exactly which AI tool will save you the most time and money.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--navy:#0D1B2A;--teal:#0A7EA4;--offwhite:#F9FAFB;--gray:#6B7280;--light:#E5E7EB}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--offwhite);color:var(--navy);min-height:100vh}
+  a{text-decoration:none;color:inherit}
+
+  nav{background:var(--navy);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
+  .logo{font-size:20px;font-weight:800;letter-spacing:-0.5px}
+  .logo span:first-child{color:#fff}
+  .logo span:last-child{color:var(--teal)}
+  nav a.nav-link{color:#fff;font-size:14px;opacity:0.75;margin-left:24px}
+
+  .hero{background:var(--navy);color:#fff;padding:48px 24px 40px;text-align:center}
+  .hero h1{font-size:clamp(24px,4vw,36px);font-weight:800;margin-bottom:12px}
+  .hero h1 span{color:var(--teal)}
+  .hero p{font-size:16px;opacity:0.75;max-width:480px;margin:0 auto}
+
+  .quiz-wrap{max-width:600px;margin:0 auto;padding:40px 24px 80px}
+
+  /* PROGRESS */
+  .progress-bar{background:var(--light);border-radius:99px;height:6px;margin-bottom:32px;overflow:hidden}
+  .progress-fill{background:var(--teal);height:100%;border-radius:99px;transition:width 0.4s ease}
+  .progress-label{font-size:13px;color:var(--gray);margin-bottom:10px;text-align:right}
+
+  /* QUESTION */
+  .question-card{background:#fff;border-radius:16px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,0.07)}
+  .q-number{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--teal);margin-bottom:12px}
+  .q-text{font-size:clamp(18px,3vw,22px);font-weight:800;line-height:1.3;margin-bottom:28px}
+
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{background:var(--offwhite);border:2px solid var(--light);border-radius:10px;padding:14px 18px;font-size:15px;font-weight:500;cursor:pointer;transition:all 0.15s;text-align:left}
+  .option:hover{border-color:var(--teal);background:#e8f4f8}
+  .option.selected{border-color:var(--teal);background:#e8f4f8;font-weight:700}
+
+  .nav-btns{display:flex;justify-content:space-between;margin-top:24px;gap:12px}
+  .btn{padding:12px 28px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:opacity 0.2s}
+  .btn-back{background:var(--light);color:var(--navy)}
+  .btn-next{background:var(--teal);color:#fff;margin-left:auto}
+  .btn:hover{opacity:0.85}
+  .btn:disabled{opacity:0.4;cursor:not-allowed}
+
+  /* RESULT */
+  .result-card{background:#fff;border-radius:16px;padding:36px;box-shadow:0 2px 12px rgba(0,0,0,0.07);text-align:center;display:none}
+  .result-emoji{font-size:56px;margin-bottom:16px}
+  .result-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--teal);margin-bottom:8px}
+  .result-tool{font-size:clamp(26px,4vw,36px);font-weight:800;margin-bottom:16px}
+  .result-desc{font-size:16px;line-height:1.7;color:#1a2535;margin-bottom:28px;text-align:left}
+  .result-reasons{background:var(--offwhite);border-radius:10px;padding:20px 24px;margin-bottom:28px;text-align:left}
+  .result-reasons p{font-size:14px;font-weight:700;color:var(--teal);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px}
+  .result-reasons ul{padding-left:18px}
+  .result-reasons ul li{font-size:15px;line-height:1.7;margin-bottom:4px}
+  .cta-btn{display:block;background:var(--teal);color:#fff;padding:16px 32px;border-radius:10px;font-size:16px;font-weight:800;margin-bottom:12px;transition:opacity 0.2s}
+  .cta-btn:hover{opacity:0.85}
+  .cta-secondary{display:block;background:var(--navy);color:#fff;padding:14px 32px;border-radius:10px;font-size:15px;font-weight:700;margin-bottom:24px;transition:opacity 0.2s}
+  .cta-secondary:hover{opacity:0.85}
+  .retake{font-size:14px;color:var(--gray);cursor:pointer;text-decoration:underline}
+
+  footer{background:var(--navy);color:#fff;text-align:center;padding:32px 24px;font-size:13px;opacity:0.8}
+
+  @media(max-width:600px){
+    .quiz-wrap{padding:24px 16px 64px}
+    .question-card{padding:24px 20px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><span>PROFIT</span><span>PILOT</span></a>
+  <div><a href="index.html" class="nav-link">← Back</a></div>
+</nav>
+
+<div class="hero">
+  <h1>Find Your <span>Perfect AI Tool</span> in 60 Seconds</h1>
+  <p>5 quick questions. A personalised recommendation. No fluff.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div id="quiz">
+    <div class="progress-label" id="progress-label">Question 1 of 5</div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:20%"></div></div>
+
+    <div class="question-card">
+      <div class="q-number" id="q-number">Question 1</div>
+      <div class="q-text" id="q-text"></div>
+      <div class="options" id="options"></div>
+      <div class="nav-btns">
+        <button class="btn btn-back" id="btn-back" onclick="prevQ()" disabled>← Back</button>
+        <button class="btn btn-next" id="btn-next" onclick="nextQ()" disabled>Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="result-card" id="result">
+    <div class="result-emoji" id="r-emoji"></div>
+    <div class="result-label">Your best match</div>
+    <div class="result-tool" id="r-tool"></div>
+    <div class="result-desc" id="r-desc"></div>
+    <div class="result-reasons">
+      <p>Why it's right for you</p>
+      <ul id="r-reasons"></ul>
+    </div>
+    <a id="r-cta" href="#" class="cta-btn" target="_blank"></a>
+    <a id="r-cta2" href="#" class="cta-secondary" target="_blank"></a>
+    <div class="retake" onclick="retake()">↩ Retake the quiz</div>
+  </div>
+</div>
+
+<footer>© 2026 ProfitPilot · Independent · <a href="about.html" style="color:inherit">About</a> · <a href="privacy.html" style="color:inherit">Privacy</a> · <a href="disclosure.html" style="color:inherit">Disclosure</a> · Some links earn us a commission</footer>
+
+<script>
+const questions = [
+  {
+    text: "What do you mainly use AI for?",
+    options: ["Writing content (blogs, emails, social)", "Building or coding something", "Searching through work documents", "A bit of everything"]
+  },
+  {
+    text: "How would you describe yourself?",
+    options: ["Solo creator or freelancer", "Marketer or entrepreneur", "Developer or technical person", "Part of a larger team or company"]
+  },
+  {
+    text: "What's your biggest pain point right now?",
+    options: ["Content takes too long to produce", "I can't find stuff inside my company", "I need to automate repetitive tasks", "I just want one tool that does everything"]
+  },
+  {
+    text: "What's your budget?",
+    options: ["$0 — free tools only", "Up to $20/month", "Up to $50/month", "Enterprise budget, price isn't the issue"]
+  },
+  {
+    text: "How important is image generation to you?",
+    options: ["Critical — I need visuals constantly", "Nice to have but not essential", "Not important at all", "I use a separate tool for that"]
+  }
+];
+
+let current = 0;
+let answers = [];
+
+function renderQ() {
+  const q = questions[current];
+  document.getElementById('q-number').textContent = `Question ${current + 1}`;
+  document.getElementById('q-text').textContent = q.text;
+  document.getElementById('progress-label').textContent = `Question ${current + 1} of ${questions.length}`;
+  document.getElementById('progress-fill').style.width = `${((current + 1) / questions.length) * 100}%`;
+
+  const opts = document.getElementById('options');
+  opts.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option' + (answers[current] === i ? ' selected' : '');
+    btn.textContent = opt;
+    btn.onclick = () => selectOption(i);
+    opts.appendChild(btn);
+  });
+
+  document.getElementById('btn-back').disabled = current === 0;
+  document.getElementById('btn-next').disabled = answers[current] === undefined;
+  document.getElementById('btn-next').textContent = current === questions.length - 1 ? 'See My Result →' : 'Next →';
+}
+
+function selectOption(i) {
+  answers[current] = i;
+  document.querySelectorAll('.option').forEach((el, idx) => {
+    el.classList.toggle('selected', idx === i);
+  });
+  document.getElementById('btn-next').disabled = false;
+}
+
+function nextQ() {
+  if (current < questions.length - 1) {
+    current++;
+    renderQ();
+  } else {
+    showResult();
+  }
+}
+
+function prevQ() {
+  if (current > 0) { current--; renderQ(); }
+}
+
+function showResult() {
+  document.getElementById('quiz').style.display = 'none';
+  const r = document.getElementById('result');
+  r.style.display = 'block';
+
+  // Score each tool
+  const scores = { claude: 0, chatgpt: 0, jasper: 0, copyai: 0, glean: 0 };
+
+  // Q1: main use
+  if (answers[0] === 0) { scores.claude += 3; scores.jasper += 2; scores.copyai += 2; }
+  if (answers[0] === 1) { scores.chatgpt += 3; }
+  if (answers[0] === 2) { scores.glean += 4; }
+  if (answers[0] === 3) { scores.chatgpt += 2; scores.claude += 1; }
+
+  // Q2: who are you
+  if (answers[1] === 0) { scores.claude += 2; scores.copyai += 2; }
+  if (answers[1] === 1) { scores.jasper += 2; scores.copyai += 2; }
+  if (answers[1] === 2) { scores.chatgpt += 3; }
+  if (answers[1] === 3) { scores.glean += 3; scores.jasper += 1; }
+
+  // Q3: pain point
+  if (answers[2] === 0) { scores.jasper += 2; scores.claude += 2; scores.copyai += 1; }
+  if (answers[2] === 1) { scores.glean += 4; }
+  if (answers[2] === 2) { scores.copyai += 3; scores.chatgpt += 1; }
+  if (answers[2] === 3) { scores.chatgpt += 2; scores.claude += 2; }
+
+  // Q4: budget
+  if (answers[3] === 0) { scores.claude += 2; scores.chatgpt += 2; scores.copyai += 1; }
+  if (answers[3] === 1) { scores.claude += 2; scores.chatgpt += 2; }
+  if (answers[3] === 2) { scores.jasper += 2; scores.copyai += 2; }
+  if (answers[3] === 3) { scores.glean += 3; scores.jasper += 2; }
+
+  // Q5: image gen
+  if (answers[4] === 0) { scores.chatgpt += 3; }
+  if (answers[4] === 1) { scores.chatgpt += 1; }
+  if (answers[4] === 2) { scores.claude += 1; }
+
+  const winner = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+
+  const results = {
+    claude: {
+      emoji: '🟣',
+      tool: 'Claude by Anthropic',
+      desc: 'Based on your answers, Claude is your best match. You prioritise writing quality, nuanced thinking, and long-form output — and Claude leads the field on all three. It writes like a human, handles complex instructions without breaking a sweat, and its 200K token context window means it never loses the thread.',
+      reasons: ['Best-in-class writing quality', 'Handles long documents and complex analysis', 'Won\'t just agree with everything you say', 'Strong free plan to get started'],
+      cta: 'Try Claude Free →',
+      ctaLink: 'https://claude.ai',
+      cta2: 'Read our Claude vs ChatGPT review →',
+      cta2Link: 'claude-vs-chatgpt.html'
+    },
+    chatgpt: {
+      emoji: '🟢',
+      tool: 'ChatGPT by OpenAI',
+      desc: 'ChatGPT is your match. Whether you\'re building something, generating images, or need an AI that connects to your existing tools — ChatGPT\'s plugin ecosystem and DALL-E integration make it the most versatile tool in the market right now.',
+      reasons: ['Best for coding and technical tasks', 'DALL-E image generation built in', 'Massive plugin ecosystem', 'Fastest and most capable on short tasks'],
+      cta: 'Try ChatGPT Free →',
+      ctaLink: 'https://chat.openai.com',
+      cta2: 'Read our Claude vs ChatGPT review →',
+      cta2Link: 'claude-vs-chatgpt.html'
+    },
+    jasper: {
+      emoji: '🟠',
+      tool: 'Jasper AI',
+      desc: 'Jasper is your match. You\'re producing content at scale and need a tool that maintains brand consistency across everything you publish. Jasper\'s brand voice training and Surfer SEO integration make it the go-to for serious content operations.',
+      reasons: ['Brand voice training keeps content consistent', 'Built-in SEO optimisation with Surfer', 'Best for teams producing high volumes of content', 'Purpose-built templates for every content type'],
+      cta: 'Try Jasper Free for 7 Days →',
+      ctaLink: 'https://www.jasper.ai',
+      cta2: 'Read our Jasper vs Copy.ai review →',
+      cta2Link: 'jasper-vs-copyai.html'
+    },
+    copyai: {
+      emoji: '🔵',
+      tool: 'Copy.ai',
+      desc: 'Copy.ai is your match. You need fast, varied content across multiple formats and want a tool that can automate repetitive content workflows. Copy.ai\'s template library and workflow automation are built exactly for your situation — and there\'s a solid free plan to start with.',
+      reasons: ['90+ templates for every content format', 'Workflow automation for repetitive tasks', 'Free plan available — no credit card needed', 'Fast output across social, email, ads, and more'],
+      cta: 'Try Copy.ai Free →',
+      ctaLink: 'https://www.copy.ai',
+      cta2: 'Read our Jasper vs Copy.ai review →',
+      cta2Link: 'jasper-vs-copyai.html'
+    },
+    glean: {
+      emoji: '🔍',
+      tool: 'Glean',
+      desc: 'Glean is your match. Your biggest challenge is finding information that already exists inside your organisation. Glean indexes everything — Slack, Drive, Notion, email, Jira — and surfaces the right answer instantly. For teams drowning in internal knowledge, it\'s transformative.',
+      reasons: ['Searches across all your company tools at once', 'Surfaces docs and messages you didn\'t know existed', 'Keeps all data private and internal', 'Saves hours of "does anyone know where that doc is?"'],
+      cta: 'Learn About Glean →',
+      ctaLink: 'https://www.glean.com',
+      cta2: 'Read our Glean vs ChatGPT review →',
+      cta2Link: 'glean-vs-chatgpt.html'
+    }
+  };
+
+  const res = results[winner];
+  document.getElementById('r-emoji').textContent = res.emoji;
+  document.getElementById('r-tool').textContent = res.tool;
+  document.getElementById('r-desc').textContent = res.desc;
+  document.getElementById('r-cta').textContent = res.cta;
+  document.getElementById('r-cta').href = res.ctaLink;
+  document.getElementById('r-cta2').textContent = res.cta2;
+  document.getElementById('r-cta2').href = res.cta2Link;
+
+  const ul = document.getElementById('r-reasons');
+  ul.innerHTML = '';
+  res.reasons.forEach(r => {
+    const li = document.createElement('li');
+    li.textContent = r;
+    ul.appendChild(li);
+  });
+}
+
+function retake() {
+  current = 0;
+  answers = [];
+  document.getElementById('result').style.display = 'none';
+  document.getElementById('quiz').style.display = 'block';
+  renderQ();
+}
+
+renderQ();
+</script>
+<script>
+(function(){
+  var t=localStorage.getItem('pp-theme');
+  if(t==='light')document.documentElement.setAttribute('data-theme','light');
+  document.getElementById('themeToggle').addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(cur==='light'){
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('pp-theme','dark');
+    }else{
+      document.documentElement.setAttribute('data-theme','light');
+      localStorage.setItem('pp-theme','light');
+    }
+  });
+})();
+</script>
+</body>
+</html>

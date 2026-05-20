@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affiliate Disclosure | Profit Pilot</title>
+<meta name="description" content="Affiliate disclosure for Profit Pilot — how we earn commissions and how that affects our recommendations.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero{background:var(--ink);padding:56px 36px 48px}
+.page-hero-inner{max-width:760px;margin:0 auto}
+.page-kicker{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+.page-hero h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;letter-spacing:-1px;margin-bottom:12px}
+.page-hero p{font-family:'Lora',serif;font-size:16px;color:rgba(255,255,255,0.5);font-style:italic;line-height:1.65}
+@media(max-width:640px){.page-hero{padding:40px 20px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">PROFIT<span>PILOT</span></a>
+  <div class="nav-right">
+    <a href="articles.html" class="nav-link">AI Tools</a>
+    <a href="articles.html" class="nav-link">Comparisons</a>
+    <a href="blog.html" class="nav-link">Guides</a>
+    <a href="index.html#newsletter" class="nav-link">Newsletter</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="quiz.html" class="nav-pill">Find My AI Tool →</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="toggle-icon-dark">☽</span>
+      <span class="toggle-icon-light">◑</span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-kicker">// Legal</div>
+    <h1>Affiliate Disclosure</h1>
+    <p>Last updated: May 14, 2026</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <p class="lead">Profit Pilot is reader-supported. Some links on this site are affiliate links — meaning if you click through and make a purchase or sign up for a service, we may earn a commission. This is at no extra cost to you.</p>
+
+  <h2>What this means in practice</h2>
+
+  <p>When you see a link to a tool like Jasper, Copy.ai, Semrush, or any other paid product, it may be an affiliate link. The price you pay is exactly the same whether you use our link or go directly to the company's website. We simply receive a referral fee for sending you there.</p>
+
+  <p>Articles that contain affiliate links will include a disclosure notice at the top of the page so you always know upfront.</p>
+
+  <h2>How it affects our recommendations</h2>
+
+  <p>It doesn't. We only recommend tools we genuinely believe are worth using. If a tool has an affiliate program but we don't think it's good, we won't recommend it. If a tool is excellent but has no affiliate program — like Claude or ChatGPT — we still cover it and recommend it where appropriate.</p>
+
+  <p>Our reviews are based on actual use. We test the tools, form an opinion, and write what we actually think. The existence of an affiliate relationship is disclosed but does not change the verdict.</p>
+
+  <h2>Current affiliate relationships</h2>
+
+  <p>We currently have or are pursuing affiliate relationships with the following companies:</p>
+  <ul>
+    <li><strong>Semrush</strong> — SEO and content marketing platform</li>
+    <li><strong>Jasper</strong> — AI writing tool</li>
+    <li><strong>Copy.ai</strong> — AI copywriting tool</li>
+    <li><strong>Impact.com</strong> — affiliate network</li>
+  </ul>
+
+  <p>This list may change as new relationships are established. When in doubt, assume any link to a paid product may be an affiliate link.</p>
+
+  <h2>FTC compliance</h2>
+
+  <p>This disclosure is made in accordance with the Federal Trade Commission's guidelines on endorsements and testimonials (16 CFR Part 255).</p>
+
+  <h2>Questions</h2>
+
+  <p>If you have any questions about our affiliate relationships or how they affect our content, contact us at <strong>contact@profitpilot.co</strong></p>
+
+</div>
+
+<footer style="background:var(--ink);border-top:1px solid rgba(255,255,255,0.06);padding:28px 36px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,255,255,0.25)">© 2026 Profit Pilot · Independent</div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <a href="about.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">About</a>
+      <a href="how-we-test.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">How We Test</a>
+      <a href="editorial-policy.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Editorial Policy</a>
+      <a href="disclosure.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Disclosure</a>
+      <a href="privacy.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Privacy</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var t=localStorage.getItem('pp-theme');
+  if(t==='light')document.documentElement.setAttribute('data-theme','light');
+  document.getElementById('themeToggle').addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(cur==='light'){
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('pp-theme','dark');
+    }else{
+      document.documentElement.setAttribute('data-theme','light');
+      localStorage.setItem('pp-theme','light');
+    }
+  });
+})();
+</script>
+</body>
+</html>

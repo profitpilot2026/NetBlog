@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How We Test AI Tools | Profit Pilot</title>
+<meta name="description" content="Every AI tool reviewed on Profit Pilot goes through the same 10-point hands-on testing framework. Here's exactly how we evaluate tools — and how we decide what to recommend.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theprofitpilotai.netlify.app/how-we-test.html">
+<meta property="og:title" content="How We Test AI Tools | Profit Pilot">
+<meta property="og:description" content="Every AI tool reviewed on Profit Pilot goes through the same 10-point hands-on testing framework.">
+<meta property="og:image" content="https://theprofitpilotai.netlify.app/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero{background:var(--ink);padding:64px 36px 56px}
+.page-hero-inner{max-width:760px;margin:0 auto}
+.page-kicker{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+.page-hero h1{font-family:'Syne',sans-serif;font-size:clamp(30px,4.5vw,48px);font-weight:800;color:#fff;letter-spacing:-1.5px;margin-bottom:14px;line-height:1.08}
+.page-hero p{font-family:'Lora',serif;font-size:17px;color:rgba(255,255,255,0.5);font-style:italic;line-height:1.7;max-width:520px}
+
+.step-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:36px 0}
+.step-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px}
+.step-num{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
+.step-title{font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.step-desc{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);line-height:1.6}
+
+.score-table{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:32px 0}
+.score-row{display:grid;grid-template-columns:1fr 120px;align-items:center;padding:16px 22px;border-bottom:1px solid var(--border)}
+.score-row:last-child{border-bottom:none}
+.score-row:nth-child(even){background:#f9fafb}
+.score-dim{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:var(--ink)}
+.score-weight{font-family:'Space Mono',monospace;font-size:11px;color:var(--accent)}
+
+.principle-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;margin:24px 0}
+.principle-list li{background:#fff;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 18px;font-family:'Inter',sans-serif;font-size:14px;color:var(--body-text);line-height:1.6}
+.principle-list li strong{color:var(--ink);display:block;margin-bottom:4px}
+
+@media(max-width:640px){.step-grid{grid-template-columns:1fr}.page-hero{padding:48px 20px 40px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">PROFIT<span>PILOT</span></a>
+  <div class="nav-right">
+    <a href="articles.html" class="nav-link">AI Tools</a>
+    <a href="articles.html" class="nav-link">Comparisons</a>
+    <a href="blog.html" class="nav-link">Guides</a>
+    <a href="index.html#newsletter" class="nav-link">Newsletter</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="quiz.html" class="nav-pill">Find My AI Tool →</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="toggle-icon-dark">☽</span>
+      <span class="toggle-icon-light">◑</span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-kicker">// Testing &amp; Review Standards</div>
+    <h1>How We Test AI Tools</h1>
+    <p>Every tool reviewed on Profit Pilot goes through the same structured testing process before we publish a verdict. Here's exactly what that looks like.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <p class="lead">There are thousands of "best AI tools" lists online. Most of them are written by people who signed up for a free trial, clicked around for ten minutes, and published a verdict. That is not how we work.</p>
+
+  <p>Every tool we review on Profit Pilot is tested against the same ten-point framework, with real tasks from real marketing and content workflows. Our goal is a simple one: help you decide whether a tool is worth your time and money — before you spend either.</p>
+
+  <hr>
+
+  <h2>The 10-point testing framework</h2>
+  <p>Before we publish any review, every tool is tested across these ten dimensions:</p>
+
+  <div class="step-grid">
+    <div class="step-card">
+      <div class="step-num">// 01</div>
+      <div class="step-title">Signup &amp; onboarding friction</div>
+      <div class="step-desc">How hard is it to get started? Does it require a credit card for a free trial? Is the onboarding clear or confusing?</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">// 02</div>
+      <div class="step-title">Pricing clarity</div>
+      <div class="step-desc">Are the pricing tiers clear and honest? Are key features hidden behind the most expensive plan? What's the real cost to get actual value?</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">// 03</div>
+      <div class="step-title">Real task test</div>
+      <div class="step-desc">We run the same standardised tasks on every tool in a category — not cherry-picked demos. For writing tools, this means blog drafts, email copy, and social posts.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">// 04</div>
+      <div class="step-title">Output quality</div>
+      <div class="step-desc">How much editing does the output need? Does it sound like a real person or a template? Is it useful on the first pass or does it need three rounds of rewrites?</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">// 05</div>
+      <div class="step-title">Speed</div>
+      <div class="step-desc">How fast does it generate? Does the interface feel sluggish? Are there annoying rate limits or delays that would slow down real work?</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">// 06</div>
+      <div class="step-title">Interface usability</div>
+      <div class="step-desc">Can someone who isn't technical use this without a tutorial? Is the layout logical? Are features buried or front and centre?</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">// 07</div>
+      <div class="step-title">Where it actually fails</div>
+      <div class="step-desc">Every tool has weak spots. We specifically test for them and report them — even if the tool has a good affiliate program.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">// 08</div>
+      <div class="step-title">Best use case fit</div>
+      <div class="step-desc">Not every tool is for everyone. We identify the specific workflow or user type where the tool is genuinely useful — and where it is not.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">// 09</div>
+      <div class="step-title">Value for money</div>
+      <div class="step-desc">Does the paid plan meaningfully improve on the free version? Is the price justified relative to what competitors offer? Would we personally pay for it?</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">// 10</div>
+      <div class="step-title">Who should skip it</div>
+      <div class="step-desc">This section appears in every review. If a tool isn't right for a certain type of user, we say so clearly — even if that means fewer affiliate clicks.</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>How we score tools</h2>
+  <p>Each tool receives a score out of 10 across five dimensions. These scores feed the final recommendation — but the written analysis matters more than the numbers.</p>
+
+  <div class="score-table">
+    <div class="score-row">
+      <div class="score-dim">Ease of use</div>
+      <div class="score-weight">/ 10</div>
+    </div>
+    <div class="score-row">
+      <div class="score-dim">Output quality</div>
+      <div class="score-weight">/ 10</div>
+    </div>
+    <div class="score-row">
+      <div class="score-dim">Value for money</div>
+      <div class="score-weight">/ 10</div>
+    </div>
+    <div class="score-row">
+      <div class="score-dim">Speed</div>
+      <div class="score-weight">/ 10</div>
+    </div>
+    <div class="score-row">
+      <div class="score-dim">Best use case fit</div>
+      <div class="score-weight">/ 10</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Our editorial principles</h2>
+
+  <ul class="principle-list">
+    <li>
+      <strong>Affiliate links do not change our verdicts.</strong>
+      Some tools we review have affiliate programs. Some do not. Our recommendation is based entirely on the testing results. If a tool fails our framework, we say so regardless of whether we earn a commission.
+    </li>
+    <li>
+      <strong>We do not accept payment to review tools.</strong>
+      If a company wants their tool reviewed, they can contact us. We will test it using the same framework. We do not guarantee a positive review, a specific publish date, or any editorial angle.
+    </li>
+    <li>
+      <strong>Reviews are updated when tools change significantly.</strong>
+      AI tools update constantly. When pricing, features, or output quality changes materially, we update the review and note the date it was revised.
+    </li>
+    <li>
+      <strong>We only review tools we have actually used.</strong>
+      This sounds obvious. It is not common practice across most review sites. We test on real tasks before publishing anything.
+    </li>
+    <li>
+      <strong>Scores reflect the tool at the time of testing.</strong>
+      A score is a snapshot, not a permanent label. A tool that scored poorly in March may be significantly better by July — and we'll update the review to reflect it.
+    </li>
+  </ul>
+
+  <hr>
+
+  <h2>What this means for you</h2>
+
+  <p>When you read a review on Profit Pilot, you're reading the result of someone who actually opened the tool, ran real tasks, hit real limits, and formed a real opinion — not someone who read a press release and published a summary.</p>
+
+  <p>If you ever find that a review is outdated, inaccurate, or missing something important, contact us. We take corrections seriously and update reviews when the evidence warrants it.</p>
+
+  <div class="verdict">
+    <div class="verdict-label">// Our promise</div>
+    <p>Every tool we recommend is one we would genuinely suggest to a marketer or creator in our own network. Every tool we flag as a skip is one we would actually steer someone away from. That's the only standard that matters.</p>
+  </div>
+
+</div>
+
+<footer class="site-footer" style="background:var(--ink);border-top:1px solid rgba(255,255,255,0.06);padding:28px 36px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,255,255,0.25)">© 2026 Profit Pilot · Independent</div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <a href="about.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">About</a>
+      <a href="editorial-policy.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Editorial Policy</a>
+      <a href="disclosure.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Disclosure</a>
+      <a href="privacy.html" style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4)">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=localStorage.getItem('pp-theme');
+  if(t==='light')document.documentElement.setAttribute('data-theme','light');
+  document.getElementById('themeToggle').addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(cur==='light'){
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('pp-theme','dark');
+    }else{
+      document.documentElement.setAttribute('data-theme','light');
+      localStorage.setItem('pp-theme','light');
+    }
+  });
+})();
+</script>
+</body>
+</html>
